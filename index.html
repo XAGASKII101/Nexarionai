@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexarion AI - Unleash Your Sales Potential with AI Automation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-image: url('logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b6b;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(78, 205, 196, 0.3) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.4s both;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            min-height: 50px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            white-space: nowrap;
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            text-align: center;
+            animation: fadeInRight 1s ease 0.6s both;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Image Upload Placeholder */
+        .image-placeholder {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            background: #f9f9f9;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            border-color: #ff6b6b;
+            background: #fff;
+        }
+
+        .image-placeholder i {
+            font-size: 3rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .image-placeholder p {
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Visual Features Section */
+        .visual-features {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .visual-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .visual-feature:nth-child(even) {
+            direction: rtl;
+        }
+
+        .visual-feature:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .feature-image {
+            text-align: center;
+        }
+
+        .feature-image img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #333;
+        }
+
+        .feature-list li i {
+            color: #4ecdc4;
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            padding: 1rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Multi-Channel Section */
+        .multi-channel {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+        }
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .channel-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .channel-card.instagram::before {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .channel-card.whatsapp::before {
+            background: #25D366;
+        }
+
+        .channel-card.email::before {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+        }
+
+        .channel-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .channel-card.instagram .channel-icon {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .channel-card.whatsapp .channel-icon {
+            background: #25D366;
+        }
+
+        .channel-card.email .channel-icon {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            border: 2px solid #f0f0f0;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff6b6b;
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            transform: scale(1.05);
+            border: 2px solid transparent;
+        }
+
+        .pricing-card.featured::before {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .pricing-card.featured .cta-button {
+            background: white;
+            color: #ff6b6b;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-period {
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-features li i {
+            color: #10b981;
+            min-width: 20px;
+        }
+
+        .pricing-card.featured .plan-features li i {
+            color: white;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.3rem 0;
+        }
+
+        .footer-section ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4ecdc4;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 1rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            50% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .pricing-card.featured {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 2rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .features,
+            .how-it-works,
+            .multi-channel,
+            .pricing,
+            .visual-features {
+                padding: 4rem 0;
+            }
+
+            .features-grid,
+            .steps-grid,
+            .pricing-grid,
+            .channel-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+
+            .visual-feature {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .visual-feature:nth-child(even) {
+                direction: ltr;
+            }
+
+            .feature-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .feature-content p {
+                font-size: 1rem;
+            }
+
+            .feature-image img {
+                max-width: 100%;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+                margin: 1rem 0;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta p {
+                font-size: 1.1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .feature-card,
+            .channel-card,
+            .pricing-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon,
+            .channel-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav {
+                padding: 0 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+
+            .feature-card:hover,
+            .channel-card:hover,
+            .pricing-card:hover {
+                transform: none;
+            }
+
+            .btn-primary:hover,
+            .btn-secondary:hover,
+            .cta-button:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                Nexarion AI
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="auth.html" class="cta-button">Start Free Trial</a>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="lpage.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Unleash Your Sales Potential with AI Automation</h1>
+                <p>Nexarion AI is a multi-channel sales automation platform that helps creators, agencies, and small
+                    businesses recover lost revenue by using AI to follow up with leads across Instagram DMs, WhatsApp,
+                    and Email.</p>
+                <div class="hero-buttons">
+                    <a href="auth.html" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Free Trial
+                    </a>
+                    <a href="#how-it-works" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="ai-robot-png-social.png" alt="AI Robot Social Media" />
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500%</h3>
+                    <p>Average Growth Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>80%</h3>
+                    <p>Workload Reduction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2M+</h3>
+                    <p>New Followers Generated</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Automated Follow-ups</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>What Makes Nexarion AI Stand Out?</h2>
+                <p>A first-of-its-kind tool that combines AI + automation + multi-channel logic for Instagram, WhatsApp,
+                    and Email, removing the need for 3+ separate tools.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Follow-Up Engine</h3>
+                    <p>Triggers smart follow-ups based on behavior. Messages are generated by AI in your tone, with
+                        intelligent escalation across Instagram, WhatsApp, and Email.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Cross-Channel Messaging</h3>
+                    <p>Drag-and-drop builder creates automated flows across Instagram, WhatsApp, and Email. Start on one
+                        platform, continue on another seamlessly.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Built for Creators & Agencies</h3>
+                    <p>Designed for solopreneurs, small teams, and online educators. Works out of the box with popular
+                        platforms and tools.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+                    <h3>Unified Inbox & Smart Replies</h3>
+                    <p>Manage all incoming leads from Instagram, WhatsApp, and Email in one screen. AI recommends the
+                        next best reply.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Forecast sales trends, identify high-potential leads, and make data-driven decisions with
+                        AI-powered insights.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Intelligent Lead Scoring</h3>
+                    <p>AI automatically scores and prioritizes leads based on engagement patterns across all three
+                        channels for maximum conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Visual Features Section -->
+    <section class="visual-features">
+        <div class="container">
+            <div class="visual-feature fade-in">
+                <div class="feature-image">
+                    <img src="Intelligent Lead Scoring.png" alt="Intelligent Lead Scoring" />
+                </div>
+                <div class="feature-content">
+                    <h3>Intelligent Lead Scoring & Analytics</h3>
+                    <p>Our AI analyzes engagement patterns across Instagram, WhatsApp, and Email to automatically score
+                        and prioritize your leads. Get real-time insights into which prospects are most likely to
+                        convert.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time lead scoring across all channels</li>
+                        <li><i class="fas fa-check"></i> Behavioral pattern analysis</li>
+                        <li><i class="fas fa-check"></i> Conversion probability predictions</li>
+                        <li><i class="fas fa-check"></i> Automated priority ranking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="visual-feature fade-in">
+                <div class="feature-image">
+                    <img src="Automated Engagement icon.png" alt="Automated Engagement" />
+                </div>
+                <div class="feature-content">
+                    <h3>Automated Engagement That Feels Human</h3>
+                    <p>Create personalized conversations that adapt to each lead's behavior and preferences. Our AI
+                        learns your communication style and maintains consistent engagement across all platforms.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Personalized message generation</li>
+                        <li><i class="fas fa-check"></i> Tone and style adaptation</li>
+                        <li><i class="fas fa-check"></i> Context-aware responses</li>
+                        <li><i class="fas fa-check"></i> Multi-language support</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Nexarion AI Advanced Features -->
+            <div class="visual-feature fade-in">
+                <div class="feature-image">
+                    <img src="features.webp" alt="Nexarion AI Multi-Channel Automation" />
+                </div>
+                <div class="feature-content">
+                    <h3>AI-Powered Multi-Channel Sales Recovery</h3>
+                    <p>Nexarion AI's revolutionary platform automatically recovers lost revenue by intelligently
+                        following up with leads across Instagram DMs, WhatsApp, and Email. Our AI learns your
+                        communication style and optimizes message timing for maximum conversion rates.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Automatic lead recovery across all 3 channels</li>
+                        <li><i class="fas fa-check"></i> AI-generated messages in your unique tone</li>
+                        <li><i class="fas fa-check"></i> Smart escalation from Instagram to WhatsApp to Email</li>
+                        <li><i class="fas fa-check"></i> Revenue tracking and lost opportunity alerts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>How It Works</h2>
+                <p>Get started in minutes with our simple 4-step process</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Connect Your Accounts</h3>
+                    <p>Link your Instagram, WhatsApp, and email accounts securely with one-click OAuth integration.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Upload Your Leads</h3>
+                    <p>Import your lead list via CSV or connect directly to your CRM and existing tools.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Set Up AI Workflows</h3>
+                    <p>Create intelligent follow-up sequences with our drag-and-drop builder and AI message generation.
+                    </p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Watch Sales Grow</h3>
+                    <p>Monitor performance, track conversions, and let AI optimize your campaigns automatically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Multi-Channel Section -->
+    <section class="multi-channel">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Seamless Multi-Channel Integration</h2>
+                <p>Unlike traditional tools limited to one platform, Nexarion AI connects across Instagram, WhatsApp,
+                    and Email</p>
+            </div>
+            <div class="channel-grid">
+                <div class="channel-card instagram fade-in">
+                    <div class="channel-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram DMs</h3>
+                    <p>Automate personalized direct messages and story replies, engaging your audience where they are
+                        most active. Track engagement and convert followers into customers.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Automated DM responses</li>
+                        <li><i class="fas fa-check"></i> Story reply automation</li>
+                        <li><i class="fas fa-check"></i> Follower engagement tracking</li>
+                    </ul>
+                </div>
+                <div class="channel-card whatsapp fade-in">
+                    <div class="channel-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Follow-ups</h3>
+                    <p>Seamlessly transition conversations to WhatsApp for real-time engagement and higher conversion
+                        rates. Build trust through personal messaging.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time messaging</li>
+                        <li><i class="fas fa-check"></i> Media sharing automation</li>
+                        <li><i class="fas fa-check"></i> Group messaging support</li>
+                    </ul>
+                </div>
+                <div class="channel-card email fade-in">
+                    <div class="channel-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Sequences</h3>
+                    <p>Build intelligent email drip campaigns that adapt to user behavior, ensuring consistent follow-up
+                        and nurturing leads to conversion.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Behavioral triggers</li>
+                        <li><i class="fas fa-check"></i> A/B testing</li>
+                        <li><i class="fas fa-check"></i> Advanced segmentation</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Robot Illustration -->
+            <div class="fade-in" style="text-align: center; margin-top: 4rem;">
+                <img src="ai-robot-png-social.png" alt="AI Robot Multi-Channel"
+                    style="max-width: 500px; width: 100%;" />
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Flexible Pricing Plans</h2>
+                <p>Choose the perfect plan to match your business needs and accelerate your sales growth</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Basic</div>
+                    <div class="plan-price">$29</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Basic AI features</li>
+                        <li><i class="fas fa-check"></i> 1,000 monthly interactions</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> Single channel automation</li>
+                        <li><i class="fas fa-check"></i> Basic analytics</li>
+                    </ul>
+                    <a href="#" class="cta-button">Choose Basic</a>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <div class="plan-name">Pro</div>
+                    <div class="plan-price">$99</div>
+                    <div class="plan-period">per month</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Basic features</li>
+                        <li><i class="fas fa-check"></i> Advanced AI models</li>
+                        <li><i class="fas fa-check"></i> 10,000 monthly interactions</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Multi-channel flows</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Lead scoring</li>
+                    </ul>
+                    <a href="#" class="cta-button">Choose Pro</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-period">pricing</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Pro features</li>
+                        <li><i class="fas fa-check"></i> Custom AI models</li>
+                        <li><i class="fas fa-check"></i> Unlimited interactions</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i> API integrations</li>
+                        <li><i class="fas fa-check"></i> White-label options</li>
+                        <li><i class="fas fa-check"></i> Custom training</li>
+                    </ul>
+                    <a href="#" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Custom Image Section -->
+    <section class="visual-features" style="background: #f8fafc; padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Unified Dashboard Experience</h2>
+                <p>Manage all your Instagram, WhatsApp, and Email campaigns from one powerful interface</p>
+            </div>
+            <div class="visual-feature fade-in">
+                <div class="feature-image">
+                    <img src="dashboard.png" alt="Nexarion AI Dashboard Interface"
+                        style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);" />
+                </div>
+                <div class="feature-content">
+                    <h3>All-in-One Command Center</h3>
+                    <p>Monitor your multi-channel campaigns, track lead engagement, and manage conversations across
+                        Instagram DMs, WhatsApp, and Email from a single, intuitive dashboard. Get real-time insights
+                        and make data-driven decisions to maximize your conversion rates.</p>
+                    <ul class="feature-list" style="margin: 1.5rem 0;">
+                        <li><i class="fas fa-check"></i> Real-time campaign performance tracking</li>
+                        <li><i class="fas fa-check"></i> Unified inbox for all three channels</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics and reporting</li>
+                        <li><i class="fas fa-check"></i> Drag-and-drop workflow builder</li>
+                    </ul>
+                    <div class="hero-buttons" style="margin-top: 2rem;">
+                        <a href="#" class="btn-primary">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </a>
+                        <a href="#" class="btn-secondary" style="margin-left: 1rem;">
+                            <i class="fas fa-desktop"></i>
+                            Try Dashboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="hero-content final-cta-content">
+                <div class="hero-text">
+                    <h2>Ready to Transform Your Sales?</h2>
+                    <p>Sign up for a free trial today and experience the unparalleled power of Nexarion AI across
+                        Instagram, WhatsApp, and Email. No credit card required!</p>
+                    <div class="hero-buttons">
+                        <a href="auth.html" class="btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Start Your Free Trial Now
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="person-using-augmented-reality-device.avif" alt="Person using AR device"
+                        class="cta-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        Nexarion AI
+                    </div>
+                    <p>Unleash your sales potential with AI-powered automation across Instagram, WhatsApp, and Email.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">AI Follow-ups</a></li>
+                        <li><a href="#">Multi-channel Messaging</a></li>
+                        <li><a href="#">Lead Scoring</a></li>
+                        <li><a href="#">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Channels</h3>
+                    <ul>
+                        <li><a href="#">Instagram DMs</a></li>
+                        <li><a href="#">WhatsApp</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nexarion AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Final CTA Section Responsive Styles */
+        .final-cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .final-cta-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Responsive Styles */
+        .footer {
+            background: #1a202c;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.3rem 0;
+        }
+
+        .footer-section ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.2rem 0;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4ecdc4;
+        }
+
+        .footer-section p {
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 1rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Tablet Responsive (1024px and below) */
+        @media (max-width: 1024px) {
+            .final-cta-content {
+                gap: 3rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+
+            .final-cta p {
+                font-size: 1.1rem;
+            }
+
+            .cta-image {
+                max-width: 350px;
+            }
+        }
+
+        /* Mobile Landscape (768px and below) */
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 4rem 0;
+                text-align: center;
+            }
+
+            .final-cta-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .final-cta p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .btn-primary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .cta-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            /* Footer Mobile Styles */
+            .footer {
+                padding: 2rem 0 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                text-align: left;
+            }
+
+            .footer-section {
+                margin-bottom: 1rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-section ul li {
+                padding: 0.2rem 0;
+            }
+
+            .footer-section ul li a {
+                font-size: 0.9rem;
+                padding: 0.3rem 0;
+            }
+
+            .footer-brand p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .footer-bottom {
+                margin-top: 1.5rem;
+                padding-top: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Mobile Portrait (480px and below) */
+        @media (max-width: 480px) {
+            .final-cta {
+                padding: 3rem 0;
+            }
+
+            .final-cta-content {
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+                line-height: 1.1;
+                margin-bottom: 1rem;
+            }
+
+            .final-cta p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.5;
+            }
+
+            .btn-primary {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+                max-width: 280px;
+            }
+
+            .cta-image {
+                max-width: 250px;
+            }
+
+            /* Footer Mobile Portrait */
+            .footer {
+                padding: 2rem 0 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin-bottom: 1.5rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section ul li a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0;
+            }
+
+            .footer-brand p {
+                font-size: 0.85rem;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+                padding-top: 1rem;
+            }
+        }
+
+        /* Extra Small Mobile (360px and below) */
+        @media (max-width: 360px) {
+            .final-cta h2 {
+                font-size: 1.6rem;
+            }
+
+            .final-cta p {
+                font-size: 0.9rem;
+            }
+
+            .btn-primary {
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
+                max-width: 260px;
+            }
+
+            .cta-image {
+                max-width: 220px;
+            }
+
+            .footer-section ul li a {
+                font-size: 0.8rem;
+            }
+
+            .footer-brand p {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Touch-friendly improvements for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .footer-section ul li a {
+                padding: 0.5rem 0;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .btn-primary {
+                min-height: 50px;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .final-cta {
+                padding: 2rem 0;
+            }
+
+            .final-cta-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-image {
+                max-width: 250px;
+            }
+        }
+    </style>
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        // Counter animation for stats
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-item h3');
+            counters.forEach(counter => {
+                const target = counter.innerText;
+                const isPercentage = target.includes('%');
+                const isPlus = target.includes('+');
+                const numericValue = parseInt(target.replace(/[^\d]/g, ''));
+                let current = 0;
+                const increment = numericValue / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericValue) {
+                        current = numericValue;
+                        clearInterval(timer);
+                    }
+                    let displayValue = Math.floor(current);
+                    if (isPercentage) displayValue += '%';
+                    if (isPlus) displayValue += '+';
+                    if (target.includes('M')) displayValue += 'M+';
+                    if (target.includes('/')) displayValue = '24/7';
+                    counter.innerText = displayValue;
+                }, 50);
+            });
+        };
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+        // CTA button click tracking
+        document.querySelectorAll('.cta-button, .btn-primary').forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Add your analytics tracking here
+                console.log('CTA clicked:', e.target.textContent);
+                // Add a subtle animation
+                e.target.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    e.target.style.transform = '';
+                }, 150);
+            });
+        });
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroVideo = document.querySelector('.hero-video');
+            if (heroVideo) {
+                heroVideo.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+
+</html>
