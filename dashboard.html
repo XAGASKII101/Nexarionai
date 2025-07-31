@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexarion AI - Professional Automation Dashboard</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -18,6 +21,7 @@
         body {
             font-family: 'Inter', sans-serif;
             transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
 
         .gradient-bg {
@@ -43,12 +47,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
-        .dark .glass-effect {
-            background: rgba(31, 41, 55, 0.95);
-            border: 1px solid rgba(75, 85, 99, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
         .sidebar-active {
             background: var(--primary-gradient);
             color: white;
@@ -66,8 +64,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .toast {
@@ -104,6 +107,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -115,8 +119,15 @@
         }
 
         @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .professional-card {
@@ -130,16 +141,6 @@
         .professional-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .dark .professional-card {
-            background: rgba(31, 41, 55, 0.95);
-            border: 1px solid rgba(75, 85, 99, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .dark .professional-card:hover {
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         .automation-status {
@@ -159,8 +160,13 @@
         }
 
         @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         .trial-badge {
@@ -169,19 +175,21 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
 
         .stat-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
             border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
-        }
-
-        .dark .stat-card {
-            background: linear-gradient(135deg, rgba(31, 41, 55, 0.9) 0%, rgba(31, 41, 55, 0.7) 100%);
-            border: 1px solid rgba(75, 85, 99, 0.3);
         }
 
         .btn-primary {
@@ -249,19 +257,19 @@
             .mobile-optimized {
                 padding: 0.5rem;
             }
-            
+
             .professional-card {
                 margin: 0.5rem;
             }
-            
+
             .stat-card {
                 padding: 1rem;
             }
-            
+
             .text-3xl {
                 font-size: 1.5rem;
             }
-            
+
             .text-2xl {
                 font-size: 1.25rem;
             }
@@ -286,30 +294,6 @@
             color: white;
         }
 
-        .dark .bg-white {
-            background-color: #1f2937 !important;
-        }
-
-        .dark .text-gray-900 {
-            color: #f9fafb !important;
-        }
-
-        .dark .text-gray-700 {
-            color: #d1d5db !important;
-        }
-
-        .dark .text-gray-600 {
-            color: #9ca3af !important;
-        }
-
-        .dark .border-gray-200 {
-            border-color: #374151 !important;
-        }
-
-        .dark .border-gray-300 {
-            border-color: #4b5563 !important;
-        }
-
         .page-transition {
             opacity: 0;
             transform: translateY(20px);
@@ -320,9 +304,37 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            margin: 0.25rem 0;
+        }
+
+        .nav-link:hover {
+            background-color: #f1f5f9;
+            transform: translateX(4px);
+        }
+
+        .sidebar {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .main-content {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800 transition-colors duration-300">
+
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
     <!-- Loading Screen -->
     <div id="loading-screen" class="fixed inset-0 gradient-bg z-50 flex items-center justify-center">
         <div class="text-center">
@@ -330,7 +342,11 @@
                 <i class="fas fa-robot text-blue-600 text-3xl"></i>
             </div>
             <div class="loading-spinner mx-auto mb-4"></div>
-            <h2 class="text-white text-2xl font-bold mb-2">Nexarion AI</h2>
+            <div class="flex items-center space-x-2">
+                <img src="logo.png" alt="Nexarion Logo" class="h-8 w-8 object-contain" />
+                <h2 class="text-white text-2xl font-bold mb-2">Nexarion AI</h2>
+            </div>
+
             <p class="text-blue-100">Loading your professional automation hub...</p>
         </div>
     </div>
@@ -338,14 +354,16 @@
     <!-- Welcome Modal -->
     <div id="welcome-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center">
         <div class="professional-card rounded-3xl p-6 sm:p-8 max-w-md mx-4 text-center welcome-animation">
-            <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 logo-animation">
+            <div
+                class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 logo-animation">
                 <i class="fas fa-robot text-white text-3xl"></i>
             </div>
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Welcome to Nexarion AI!</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to Nexarion AI!</h2>
             <div class="trial-badge text-white px-4 py-2 rounded-full text-sm font-semibold mb-4 inline-block">
                 🎉 7-Day Free Trial Started!
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-6">You're all set to automate your communications across Instagram, WhatsApp, and Email. Let's get started!</p>
+            <p class="text-gray-600 mb-6">You're all set to automate your communications across Instagram, WhatsApp, and
+                Email. Let's get started!</p>
             <button id="close-welcome" class="w-full btn-primary py-3 px-6 rounded-xl font-semibold">
                 Start Automating
             </button>
@@ -353,16 +371,21 @@
     </div>
 
     <!-- Sidebar -->
-    <div id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-gray-900 shadow-xl transform -translate-x-full transition-transform duration-300 lg:translate-x-0 border-r border-gray-200 dark:border-gray-700">
+    <div id="sidebar"
+        class="sidebar fixed inset-y-0 left-0 z-40 w-64 shadow-xl transform -translate-x-full transition-transform duration-300 lg:translate-x-0">
         <div class="flex items-center justify-center h-16 gradient-bg">
             <div class="flex items-center space-x-3">
                 <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center logo-animation">
                     <i class="fas fa-robot text-blue-600 text-lg"></i>
                 </div>
-                <h1 class="text-white text-xl font-bold">Nexarion AI</h1>
+                <div class="flex items-center space-x-2">
+                    <img src="logo.png" alt="Nexarion Logo" class="h-8 w-8 object-contain" />
+                    <h2 class="text-white text-2xl font-bold mb-2">Nexarion AI</h2>
+                </div>
+
             </div>
         </div>
-        
+
         <!-- Trial Status -->
         <div class="px-4 py-3 gradient-warning text-white text-center">
             <div class="text-sm font-semibold">Free Trial</div>
@@ -371,44 +394,54 @@
 
         <nav class="mt-4 px-4 pb-4 overflow-y-auto" style="height: calc(100vh - 140px);">
             <div class="space-y-2">
-                <a href="#" data-page="dashboard" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 sidebar-active">
+                <a href="#" data-page="dashboard"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200 sidebar-active">
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="#" data-page="leads" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="leads"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-users mr-3"></i>
                     <span>Leads</span>
                 </a>
-                <a href="#" data-page="campaigns" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="campaigns"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-bullhorn mr-3"></i>
                     <span>Campaigns</span>
                 </a>
-                <a href="#" data-page="automations" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="automations"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-robot mr-3"></i>
                     <span>Automations</span>
                     <span class="ml-auto bg-green-500 text-white text-xs px-2 py-1 rounded-full">Live</span>
                 </a>
-                <a href="#" data-page="integrations" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="integrations"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-plug mr-3"></i>
                     <span>Integrations</span>
                 </a>
-                <a href="#" data-page="analytics" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="analytics"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-chart-bar mr-3"></i>
                     <span>Analytics</span>
                 </a>
-                <a href="#" data-page="voice" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="voice"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-microphone mr-3"></i>
                     <span>Voice Clone</span>
                 </a>
-                <a href="#" data-page="affiliates" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="affiliates"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-handshake mr-3"></i>
                     <span>Affiliates</span>
                 </a>
-                <a href="#" data-page="billing" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="billing"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-credit-card mr-3"></i>
                     <span>Billing</span>
                 </a>
-                <a href="#" data-page="settings" class="nav-link flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <a href="#" data-page="settings"
+                    class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-xl hover:bg-gray-100 transition-all duration-200">
                     <i class="fas fa-cog mr-3"></i>
                     <span>Settings</span>
                 </a>
@@ -420,46 +453,47 @@
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden hidden"></div>
 
     <!-- Main Content -->
-    <div class="lg:ml-64 min-h-screen">
+    <div class="lg:ml-64 min-h-screen main-content">
         <!-- Header -->
-        <header class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
+        <header class="header shadow-sm sticky top-0 z-20">
             <div class="flex items-center justify-between px-4 sm:px-6 py-4">
                 <div class="flex items-center">
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 mr-2">
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 rounded-lg text-gray-500 hover:text-gray-700 mr-2">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
-                    <h2 id="page-title" class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h2>
+                    <h2 id="page-title" class="text-xl sm:text-2xl font-bold text-gray-900">Dashboard</h2>
                 </div>
                 <div class="flex items-center space-x-2 sm:space-x-4">
-                    <div class="automation-status bg-green-100 dark:bg-green-900 px-2 sm:px-3 py-1 rounded-full hidden sm:block">
-                        <span class="text-green-800 dark:text-green-200 text-xs sm:text-sm font-semibold">
+                    <div class="automation-status bg-green-100 px-2 sm:px-3 py-1 rounded-full hidden sm:block">
+                        <span class="text-green-800 text-xs sm:text-sm font-semibold">
                             <i class="fas fa-circle text-green-500 mr-1 animate-pulse"></i>
                             Automations Active
                         </span>
                     </div>
-                    <button id="notifications-btn" class="relative p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                    <button id="notifications-btn" class="relative p-2 rounded-lg text-gray-500 hover:text-gray-700">
                         <i class="fas fa-bell text-lg sm:text-xl"></i>
-                        <span id="notification-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center hidden">0</span>
-                    </button>
-                    <button id="theme-toggle" class="p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-200">
-                        <i class="fas fa-moon dark:hidden text-lg sm:text-xl"></i>
-                        <i class="fas fa-sun hidden dark:inline text-lg sm:text-xl"></i>
+                        <span id="notification-count"
+                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center hidden">0</span>
                     </button>
                     <div class="relative">
-                        <button id="user-menu-btn" class="flex items-center space-x-2 sm:space-x-3 p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            <img id="user-avatar" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-blue-500" src="https://ui-avatars.com/api/?name=User&background=667eea&color=fff" alt="User">
+                        <button id="user-menu-btn"
+                            class="flex items-center space-x-2 sm:space-x-3 p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                            <img id="user-avatar" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-blue-500"
+                                src="https://ui-avatars.com/api/?name=User&background=667eea&color=fff" alt="User">
                             <span id="user-name" class="hidden sm:block font-medium text-sm">Loading...</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
-                        <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50 border border-gray-200 dark:border-gray-700">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <div id="user-menu"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border border-gray-200">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                 <i class="fas fa-user mr-2"></i>Profile
                             </a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                 <i class="fas fa-cog mr-2"></i>Settings
                             </a>
-                            <hr class="my-2 border-gray-200 dark:border-gray-600">
-                            <a href="#" id="logout-btn" class="block px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <hr class="my-2 border-gray-200">
+                            <a href="#" id="logout-btn" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">
                                 <i class="fas fa-sign-out-alt mr-2"></i>Sign Out
                             </a>
                         </div>
@@ -477,19 +511,24 @@
                     <div class="gradient-bg rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-white professional-card">
                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
                             <div class="mb-4 sm:mb-0">
-                                <h1 class="text-2xl sm:text-3xl font-bold mb-2">Welcome back, <span id="dashboard-user-name">User</span>! 👋</h1>
-                                <p class="text-blue-100 text-base sm:text-lg mb-4">Your automation empire is running smoothly. Here's today's performance.</p>
-                                <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                                <h1 class="text-2xl sm:text-3xl font-bold mb-2">Welcome back, <span
+                                        id="dashboard-user-name">User</span>! 👋</h1>
+                                <p class="text-blue-100 text-base sm:text-lg mb-4">Your automation empire is running
+                                    smoothly. Here's today's performance.</p>
+                                <div
+                                    class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
                                     <div class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
                                         <span class="text-xs sm:text-sm font-semibold">Free Trial: 6 days left</span>
                                     </div>
-                                    <button onclick="showModal('upgrade-modal')" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors">
+                                    <button onclick="showModal('upgrade-modal')"
+                                        class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors">
                                         Upgrade Now
                                     </button>
                                 </div>
                             </div>
                             <div class="hidden sm:block">
-                                <div class="w-20 h-20 sm:w-24 sm:h-24 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center logo-animation">
+                                <div
+                                    class="w-20 h-20 sm:w-24 sm:h-24 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center logo-animation">
                                     <i class="fas fa-robot text-white text-2xl sm:text-3xl"></i>
                                 </div>
                             </div>
@@ -502,56 +541,57 @@
                     <div class="stat-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Messages Sent</p>
-                                <p id="messages-sent" class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">0</p>
+                                <p class="text-xs sm:text-sm font-semibold text-gray-600 uppercase">Messages Sent</p>
+                                <p id="messages-sent" class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">0</p>
                                 <p class="text-xs sm:text-sm text-green-600 mt-1">
                                     <i class="fas fa-arrow-up mr-1"></i>+12% from last month
                                 </p>
                             </div>
-                            <div class="p-3 sm:p-4 bg-blue-100 dark:bg-blue-900 rounded-xl sm:rounded-2xl">
-                                <i class="fas fa-paper-plane text-blue-600 dark:text-blue-400 text-xl sm:text-2xl"></i>
+                            <div class="p-3 sm:p-4 bg-blue-100 rounded-xl sm:rounded-2xl">
+                                <i class="fas fa-paper-plane text-blue-600 text-xl sm:text-2xl"></i>
                             </div>
                         </div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Response Rate</p>
-                                <p id="response-rate" class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">0%</p>
+                                <p class="text-xs sm:text-sm font-semibold text-gray-600 uppercase">Response Rate</p>
+                                <p id="response-rate" class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">0%</p>
                                 <p class="text-xs sm:text-sm text-green-600 mt-1">
                                     <i class="fas fa-arrow-up mr-1"></i>+5% from last week
                                 </p>
                             </div>
-                            <div class="p-3 sm:p-4 bg-green-100 dark:bg-green-900 rounded-xl sm:rounded-2xl">
-                                <i class="fas fa-reply text-green-600 dark:text-green-400 text-xl sm:text-2xl"></i>
+                            <div class="p-3 sm:p-4 bg-green-100 rounded-xl sm:rounded-2xl">
+                                <i class="fas fa-reply text-green-600 text-xl sm:text-2xl"></i>
                             </div>
                         </div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Active Leads</p>
-                                <p id="active-leads" class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">0</p>
+                                <p class="text-xs sm:text-sm font-semibold text-gray-600 uppercase">Active Leads</p>
+                                <p id="active-leads" class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">0</p>
                                 <p class="text-xs sm:text-sm text-blue-600 mt-1">
                                     <i class="fas fa-users mr-1"></i>Ready for follow-up
                                 </p>
                             </div>
-                            <div class="p-3 sm:p-4 bg-yellow-100 dark:bg-yellow-900 rounded-xl sm:rounded-2xl">
-                                <i class="fas fa-users text-yellow-600 dark:text-yellow-400 text-xl sm:text-2xl"></i>
+                            <div class="p-3 sm:p-4 bg-yellow-100 rounded-xl sm:rounded-2xl">
+                                <i class="fas fa-users text-yellow-600 text-xl sm:text-2xl"></i>
                             </div>
                         </div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-400 uppercase">Automations</p>
-                                <p id="active-automations" class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mt-2">0</p>
+                                <p class="text-xs sm:text-sm font-semibold text-gray-600 uppercase">Automations</p>
+                                <p id="active-automations" class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2">0
+                                </p>
                                 <p class="text-xs sm:text-sm text-purple-600 mt-1">
                                     <i class="fas fa-robot mr-1"></i>Running smoothly
                                 </p>
                             </div>
-                            <div class="p-3 sm:p-4 bg-purple-100 dark:bg-purple-900 rounded-xl sm:rounded-2xl">
-                                <i class="fas fa-robot text-purple-600 dark:text-purple-400 text-xl sm:text-2xl"></i>
+                            <div class="p-3 sm:p-4 bg-purple-100 rounded-xl sm:rounded-2xl">
+                                <i class="fas fa-robot text-purple-600 text-xl sm:text-2xl"></i>
                             </div>
                         </div>
                     </div>
@@ -561,38 +601,44 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                     <!-- Quick Actions -->
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Quick Actions</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Quick Actions</h3>
                         <div class="space-y-3 sm:space-y-4">
-                            <button onclick="showModal('lead-modal')" class="w-full text-left p-3 sm:p-4 bg-blue-50 dark:bg-blue-900 rounded-xl sm:rounded-2xl hover:bg-blue-100 dark:hover:bg-blue-800 transition-all duration-200">
+                            <button onclick="showModal('lead-modal')"
+                                class="w-full text-left p-3 sm:p-4 bg-blue-50 rounded-xl sm:rounded-2xl hover:bg-blue-100 transition-all duration-200">
                                 <div class="flex items-center">
                                     <div class="p-2 sm:p-3 bg-blue-600 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
                                         <i class="fas fa-plus text-white text-sm sm:text-base"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Add New Lead</h4>
-                                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Import or add leads manually</p>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Add New Lead</h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Import or add leads manually</p>
                                     </div>
                                 </div>
                             </button>
-                            <button onclick="showModal('campaign-modal')" class="w-full text-left p-3 sm:p-4 bg-green-50 dark:bg-green-900 rounded-xl sm:rounded-2xl hover:bg-green-100 dark:hover:bg-green-800 transition-all duration-200">
+                            <button onclick="showModal('campaign-modal')"
+                                class="w-full text-left p-3 sm:p-4 bg-green-50 rounded-xl sm:rounded-2xl hover:bg-green-100 transition-all duration-200">
                                 <div class="flex items-center">
                                     <div class="p-2 sm:p-3 bg-green-600 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
                                         <i class="fas fa-bullhorn text-white text-sm sm:text-base"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Create Campaign</h4>
-                                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Launch a new messaging campaign</p>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Create Campaign
+                                        </h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Launch a new messaging campaign</p>
                                     </div>
                                 </div>
                             </button>
-                            <button onclick="showModal('automation-modal')" class="w-full text-left p-3 sm:p-4 bg-purple-50 dark:bg-purple-900 rounded-xl sm:rounded-2xl hover:bg-purple-100 dark:hover:bg-purple-800 transition-all duration-200">
+                            <button onclick="showModal('automation-modal')"
+                                class="w-full text-left p-3 sm:p-4 bg-purple-50 rounded-xl sm:rounded-2xl hover:bg-purple-100 transition-all duration-200">
                                 <div class="flex items-center">
                                     <div class="p-2 sm:p-3 bg-purple-600 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
                                         <i class="fas fa-robot text-white text-sm sm:text-base"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Setup Automation</h4>
-                                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Create smart automation workflows</p>
+                                        <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Setup Automation
+                                        </h4>
+                                        <p class="text-gray-600 text-xs sm:text-sm">Create smart automation workflows
+                                        </p>
                                     </div>
                                 </div>
                             </button>
@@ -601,24 +647,25 @@
 
                     <!-- Recent Activity -->
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Recent Activity</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Recent Activity</h3>
                         <div id="recent-activity" class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                                <div class="p-2 bg-green-100 dark:bg-green-900 rounded-lg mr-3">
-                                    <i class="fas fa-check text-green-600 dark:text-green-400 text-sm"></i>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-xl">
+                                <div class="p-2 bg-green-100 rounded-lg mr-3">
+                                    <i class="fas fa-check text-green-600 text-sm"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">Automation "Welcome Series" sent 5 messages</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">2 minutes ago</p>
+                                    <p class="text-sm font-medium text-gray-900">Automation "Welcome Series" sent 5
+                                        messages</p>
+                                    <p class="text-xs text-gray-500">2 minutes ago</p>
                                 </div>
                             </div>
-                            <div class="flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                                <div class="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg mr-3">
-                                    <i class="fas fa-user-plus text-blue-600 dark:text-blue-400 text-sm"></i>
+                            <div class="flex items-center p-3 bg-gray-50 rounded-xl">
+                                <div class="p-2 bg-blue-100 rounded-lg mr-3">
+                                    <i class="fas fa-user-plus text-blue-600 text-sm"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-medium text-gray-900 dark:text-white">New lead added: John Doe</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">5 minutes ago</p>
+                                    <p class="text-sm font-medium text-gray-900">New lead added: John Doe</p>
+                                    <p class="text-xs text-gray-500">5 minutes ago</p>
                                 </div>
                             </div>
                         </div>
@@ -628,13 +675,16 @@
 
             <!-- Leads Page -->
             <div id="leads-page" class="page-content page-transition hidden">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 space-y-4 sm:space-y-0">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Leads Management</h2>
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 space-y-4 sm:space-y-0">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Leads Management</h2>
                     <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
-                        <button onclick="showModal('import-leads-modal')" class="btn-success px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                        <button onclick="showModal('import-leads-modal')"
+                            class="btn-success px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                             <i class="fas fa-upload mr-2"></i>Import CSV
                         </button>
-                        <button onclick="showModal('lead-modal')" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                        <button onclick="showModal('lead-modal')"
+                            class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                             <i class="fas fa-plus mr-2"></i>Add Lead
                         </button>
                     </div>
@@ -644,19 +694,19 @@
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-red-600" id="cold-leads">0</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Cold Leads</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Cold Leads</div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-yellow-600" id="warm-leads">0</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Warm Leads</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Warm Leads</div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-green-600" id="hot-leads">0</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Hot Leads</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Hot Leads</div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-blue-600" id="closed-leads">0</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Closed</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Closed</div>
                     </div>
                 </div>
 
@@ -666,17 +716,24 @@
                         <div class="overflow-x-auto">
                             <table class="w-full text-left">
                                 <thead>
-                                    <tr class="border-b border-gray-200 dark:border-gray-700">
-                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Name</th>
-                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Contact</th>
-                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Status</th>
-                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 dark:text-white text-sm sm:text-base hidden sm:table-cell">Last Contact</th>
-                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Actions</th>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 text-sm sm:text-base">
+                                            Name</th>
+                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 text-sm sm:text-base">
+                                            Contact</th>
+                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 text-sm sm:text-base">
+                                            Status</th>
+                                        <th
+                                            class="py-3 px-2 sm:px-4 font-semibold text-gray-900 text-sm sm:text-base hidden sm:table-cell">
+                                            Last Contact</th>
+                                        <th class="py-3 px-2 sm:px-4 font-semibold text-gray-900 text-sm sm:text-base">
+                                            Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody id="leads-table">
                                     <tr>
-                                        <td colspan="5" class="text-center py-8 sm:py-12 text-gray-500 dark:text-gray-400">No leads found</td>
+                                        <td colspan="5" class="text-center py-8 sm:py-12 text-gray-500">No leads found
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -687,12 +744,14 @@
 
             <!-- Campaigns Page -->
             <div id="campaigns-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Campaigns</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Campaigns</h2>
                 <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-center">
                     <i class="fas fa-bullhorn text-4xl sm:text-6xl text-gray-400 mb-4"></i>
-                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">No campaigns yet</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm sm:text-base">Create your first campaign to start reaching your leads</p>
-                    <button onclick="showModal('campaign-modal')" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">No campaigns yet</h3>
+                    <p class="text-gray-600 mb-6 text-sm sm:text-base">Create your first campaign to start reaching your
+                        leads</p>
+                    <button onclick="showModal('campaign-modal')"
+                        class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                         <i class="fas fa-plus mr-2"></i>Create Campaign
                     </button>
                 </div>
@@ -700,9 +759,11 @@
 
             <!-- Automations Page -->
             <div id="automations-page" class="page-content page-transition hidden">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 space-y-4 sm:space-y-0">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Smart Automations</h2>
-                    <button onclick="showModal('automation-modal')" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 space-y-4 sm:space-y-0">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Smart Automations</h2>
+                    <button onclick="showModal('automation-modal')"
+                        class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                         <i class="fas fa-plus mr-2"></i>Create Automation
                     </button>
                 </div>
@@ -711,36 +772,45 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div class="professional-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="text-center">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-handshake text-blue-600 dark:text-blue-400 text-lg sm:text-2xl"></i>
+                            <div
+                                class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-handshake text-blue-600 text-lg sm:text-2xl"></i>
                             </div>
-                            <h3 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2">Welcome Series</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-4">Automatically welcome new leads with a personalized message sequence</p>
-                            <button onclick="createWelcomeAutomation()" class="w-full btn-primary py-2 px-4 rounded-lg text-xs sm:text-sm">
+                            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">Welcome Series</h3>
+                            <p class="text-gray-600 text-xs sm:text-sm mb-4">Automatically welcome new leads with a
+                                personalized message sequence</p>
+                            <button onclick="createWelcomeAutomation()"
+                                class="w-full btn-primary py-2 px-4 rounded-lg text-xs sm:text-sm">
                                 Use Template
                             </button>
                         </div>
                     </div>
                     <div class="professional-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="text-center">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-clock text-green-600 dark:text-green-400 text-lg sm:text-2xl"></i>
+                            <div
+                                class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-green-600 text-lg sm:text-2xl"></i>
                             </div>
-                            <h3 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2">Follow-up Sequence</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-4">Send follow-up messages to leads who haven't responded</p>
-                            <button onclick="createFollowupAutomation()" class="w-full btn-success py-2 px-4 rounded-lg text-xs sm:text-sm">
+                            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">Follow-up Sequence</h3>
+                            <p class="text-gray-600 text-xs sm:text-sm mb-4">Send follow-up messages to leads who
+                                haven't responded</p>
+                            <button onclick="createFollowupAutomation()"
+                                class="w-full btn-success py-2 px-4 rounded-lg text-xs sm:text-sm">
                                 Use Template
                             </button>
                         </div>
                     </div>
                     <div class="professional-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="text-center">
-                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-birthday-cake text-purple-600 dark:text-purple-400 text-lg sm:text-2xl"></i>
+                            <div
+                                class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-birthday-cake text-purple-600 text-lg sm:text-2xl"></i>
                             </div>
-                            <h3 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2">Birthday Wishes</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-4">Send personalized birthday messages to your contacts</p>
-                            <button onclick="createBirthdayAutomation()" class="w-full btn-secondary py-2 px-4 rounded-lg text-xs sm:text-sm">
+                            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">Birthday Wishes</h3>
+                            <p class="text-gray-600 text-xs sm:text-sm mb-4">Send personalized birthday messages to your
+                                contacts</p>
+                            <button onclick="createBirthdayAutomation()"
+                                class="w-full btn-secondary py-2 px-4 rounded-lg text-xs sm:text-sm">
                                 Use Template
                             </button>
                         </div>
@@ -749,19 +819,20 @@
 
                 <!-- Active Automations -->
                 <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Active Automations</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Active Automations</h3>
                     <div id="automations-list" class="space-y-3 sm:space-y-4">
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-xl space-y-2 sm:space-y-0">
+                        <div
+                            class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 bg-gray-50 rounded-xl space-y-2 sm:space-y-0">
                             <div class="flex items-center">
                                 <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
                                 <div>
-                                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Welcome Series</h4>
-                                    <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Triggered by: New lead added</p>
+                                    <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Welcome Series</h4>
+                                    <p class="text-xs sm:text-sm text-gray-600">Triggered by: New lead added</p>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-2">
-                                <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Active</span>
-                                <button onclick="toggleAutomation('welcome')" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Active</span>
+                                <button onclick="toggleAutomation('welcome')" class="text-gray-500 hover:text-gray-700">
                                     <i class="fas fa-pause"></i>
                                 </button>
                             </div>
@@ -772,59 +843,65 @@
 
             <!-- Integrations Page -->
             <div id="integrations-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Platform Integrations</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Platform Integrations</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                     <!-- WhatsApp -->
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="p-3 sm:p-4 bg-green-100 dark:bg-green-900 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
-                                <i class="fab fa-whatsapp text-green-600 dark:text-green-400 text-2xl sm:text-3xl"></i>
+                            <div class="p-3 sm:p-4 bg-green-100 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
+                                <i class="fab fa-whatsapp text-green-600 text-2xl sm:text-3xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">WhatsApp</h3>
-                                <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Business API</p>
-                                <span id="whatsapp-status" class="connection-status disconnected">Disconnected</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900">WhatsApp</h3>
+                                <p class="text-xs sm:text-sm text-gray-600">Business API</p>
+                                <span id="whatsapp-status" class="connection-status connected">Connected</span>
                             </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Connect your WhatsApp Business account to send automated messages.</p>
-                        <button onclick="connectWhatsApp()" class="social-connect-btn w-full bg-green-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-green-700 font-semibold text-sm sm:text-base">
-                            <i class="fas fa-plug mr-2"></i>Connect WhatsApp
+                        <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Send automated messages through
+                            WhatsApp Business API.</p>
+                        <button
+                            class="social-connect-btn w-full bg-green-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-green-700 font-semibold text-sm sm:text-base">
+                            <i class="fas fa-check mr-2"></i>Active
                         </button>
                     </div>
 
                     <!-- Instagram -->
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="p-3 sm:p-4 bg-pink-100 dark:bg-pink-900 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
-                                <i class="fab fa-instagram text-pink-600 dark:text-pink-400 text-2xl sm:text-3xl"></i>
+                            <div class="p-3 sm:p-4 bg-pink-100 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
+                                <i class="fab fa-instagram text-pink-600 text-2xl sm:text-3xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Instagram</h3>
-                                <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Business Account</p>
-                                <span id="instagram-status" class="connection-status disconnected">Disconnected</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900">Instagram</h3>
+                                <p class="text-xs sm:text-sm text-gray-600">Business Account</p>
+                                <span id="instagram-status" class="connection-status connected">Connected</span>
                             </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Automate your Instagram direct messages and engage with your audience.</p>
-                        <button onclick="connectInstagram()" class="social-connect-btn w-full bg-pink-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-pink-700 font-semibold text-sm sm:text-base">
-                            <i class="fas fa-plug mr-2"></i>Connect Instagram
+                        <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Automate your Instagram direct
+                            messages and engage with your audience.</p>
+                        <button
+                            class="social-connect-btn w-full bg-pink-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-pink-700 font-semibold text-sm sm:text-base">
+                            <i class="fas fa-check mr-2"></i>Active
                         </button>
                     </div>
 
                     <!-- Email -->
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <div class="p-3 sm:p-4 bg-blue-100 dark:bg-blue-900 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
-                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-2xl sm:text-3xl"></i>
+                            <div class="p-3 sm:p-4 bg-blue-100 rounded-xl sm:rounded-2xl mr-3 sm:mr-4">
+                                <i class="fas fa-envelope text-blue-600 text-2xl sm:text-3xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">Email</h3>
-                                <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">SMTP Service</p>
-                                <span id="email-status" class="connection-status disconnected">Disconnected</span>
+                                <h3 class="text-lg sm:text-xl font-bold text-gray-900">Email</h3>
+                                <p class="text-xs sm:text-sm text-gray-600">SMTP Service</p>
+                                <span id="email-status" class="connection-status connected">Connected</span>
                             </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Connect your email service to send automated email campaigns.</p>
-                        <button onclick="connectEmail()" class="social-connect-btn w-full bg-blue-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-blue-700 font-semibold text-sm sm:text-base">
-                            <i class="fas fa-plug mr-2"></i>Connect Email
+                        <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">Send automated email campaigns
+                            through SMTP.</p>
+                        <button
+                            class="social-connect-btn w-full bg-blue-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-blue-700 font-semibold text-sm sm:text-base">
+                            <i class="fas fa-check mr-2"></i>Active
                         </button>
                     </div>
                 </div>
@@ -832,16 +909,16 @@
 
             <!-- Analytics Page -->
             <div id="analytics-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Analytics & Insights</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Analytics & Insights</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Message Performance</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Message Performance</h3>
                         <div class="chart-container">
                             <canvas id="messageChart"></canvas>
                         </div>
                     </div>
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Platform Distribution</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Platform Distribution</h3>
                         <div class="chart-container">
                             <canvas id="platformChart"></canvas>
                         </div>
@@ -851,26 +928,25 @@
 
             <!-- Voice Page -->
             <div id="voice-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Voice Clone</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Voice Clone</h2>
                 <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
                     <div class="text-center mb-6 sm:mb-8">
                         <i class="fas fa-microphone text-4xl sm:text-6xl text-blue-600 mb-4"></i>
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">Clone Your Voice</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Upload a voice sample to create personalized voice messages</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Clone Your Voice</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Upload a voice sample to create personalized voice
+                            messages</p>
                     </div>
-                    
+
                     <div class="max-w-md mx-auto">
                         <div class="mb-4 sm:mb-6">
-                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Voice Sample (30-60 seconds)</label>
-                            <input type="file" id="voice-upload" accept="audio/*" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                            <label class="block text-gray-700 text-sm font-semibold mb-2">Voice Sample (30-60
+                                seconds)</label>
+                            <input type="file" id="voice-upload" accept="audio/*"
+                                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                         </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">ElevenLabs API Key</label>
-                            <input type="password" id="elevenlabs-key" placeholder="Enter your ElevenLabs API key" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                        </div>
-                        
-                        <button id="clone-voice-btn" class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+
+                        <button id="clone-voice-btn"
+                            class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                             <i class="fas fa-magic mr-2"></i>Clone Voice
                         </button>
                     </div>
@@ -879,34 +955,37 @@
 
             <!-- Affiliates Page -->
             <div id="affiliates-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Affiliate Program</h2>
-                
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Affiliate Program</h2>
+
                 <!-- Affiliate Stats -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-green-600" id="total-earnings">$0.00</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Total Earnings</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Total Earnings</div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-blue-600" id="total-referrals">0</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Total Referrals</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Total Referrals</div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-purple-600" id="total-clicks">0</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Total Clicks</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Total Clicks</div>
                     </div>
                     <div class="stat-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg text-center">
                         <div class="text-2xl sm:text-3xl font-bold text-yellow-600" id="conversion-rate">0%</div>
-                        <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Conversion Rate</div>
+                        <div class="text-xs sm:text-sm text-gray-600">Conversion Rate</div>
                     </div>
                 </div>
 
                 <!-- Referral Link -->
                 <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg mb-6 sm:mb-8">
-                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Your Referral Link</h3>
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                        <input type="text" id="referral-link" readonly class="flex-1 px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white text-sm sm:text-base">
-                        <button id="copy-link-btn" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Your Referral Link</h3>
+                    <div
+                        class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                        <input type="text" id="referral-link" readonly
+                            class="flex-1 px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl bg-gray-50 text-gray-900 text-sm sm:text-base">
+                        <button id="copy-link-btn"
+                            class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                             <i class="fas fa-copy mr-2"></i>Copy
                         </button>
                     </div>
@@ -915,19 +994,21 @@
 
             <!-- Billing Page -->
             <div id="billing-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Subscription & Billing</h2>
-                
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Subscription & Billing</h2>
+
                 <!-- Current Plan -->
                 <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg mb-6 sm:mb-8">
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0">
+                    <div
+                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0">
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Free Trial</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm sm:text-base">6 days remaining</p>
-                            <div class="w-full sm:w-64 bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2">
+                            <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2">Free Trial</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">6 days remaining</p>
+                            <div class="w-full sm:w-64 bg-gray-200 rounded-full h-2 mt-2">
                                 <div class="gradient-warning h-2 rounded-full" style="width: 14%"></div>
                             </div>
                         </div>
-                        <button onclick="showModal('upgrade-modal')" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                        <button onclick="showModal('upgrade-modal')"
+                            class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                             Upgrade Now
                         </button>
                     </div>
@@ -935,75 +1016,86 @@
 
                 <!-- Pricing Plans -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                    <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border-2 border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Basic</h3>
-                        <p class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">$49<span class="text-base text-gray-600 dark:text-gray-400">/month</span></p>
+                    <div
+                        class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border-2 border-gray-200">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Basic</h3>
+                        <p class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">$49<span
+                                class="text-base text-gray-600">/month</span></p>
                         <ul class="space-y-3 mb-6">
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>5,000 messages/month
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>3 platforms (WhatsApp, Instagram, Email)
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Basic automation
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>CSV import/export
                             </li>
                         </ul>
-                        <button onclick="upgradePlan('basic')" class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+                        <button onclick="upgradePlan('basic')"
+                            class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                             Choose Basic
                         </button>
                     </div>
 
-                    <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border-2 border-blue-500 relative">
-                        <span class="absolute top-4 right-4 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-3 py-1 rounded-full font-semibold">Most Popular</span>
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Pro</h3>
-                        <p class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">$99<span class="text-base text-gray-600 dark:text-gray-400">/month</span></p>
+                    <div
+                        class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border-2 border-blue-500 relative">
+                        <span
+                            class="absolute top-4 right-4 bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold">Most
+                            Popular</span>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Pro</h3>
+                        <p class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">$99<span
+                                class="text-base text-gray-600">/month</span></p>
                         <ul class="space-y-3 mb-6">
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>25,000 messages/month
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>All platforms + API access
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Advanced automation
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Voice cloning
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Priority support
                             </li>
                         </ul>
-                        <button onclick="upgradePlan('pro')" class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+                        <button onclick="upgradePlan('pro')"
+                            class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                             Choose Pro
                         </button>
                     </div>
 
-                    <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border-2 border-gray-200 dark:border-gray-700">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Enterprise</h3>
-                        <p class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">$299<span class="text-base text-gray-600 dark:text-gray-400">/month</span></p>
+                    <div
+                        class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border-2 border-gray-200">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-3">Enterprise</h3>
+                        <p class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">$299<span
+                                class="text-base text-gray-600">/month</span></p>
                         <ul class="space-y-3 mb-6">
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Unlimited messages
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>All platforms + custom integrations
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Custom automation workflows
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>Dedicated account manager
                             </li>
-                            <li class="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                            <li class="flex items-center text-gray-600 text-sm sm:text-base">
                                 <i class="fas fa-check text-green-500 mr-3"></i>White-label solution
                             </li>
                         </ul>
-                        <button onclick="upgradePlan('enterprise')" class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+                        <button onclick="upgradePlan('enterprise')"
+                            class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                             Choose Enterprise
                         </button>
                     </div>
@@ -1012,64 +1104,32 @@
 
             <!-- Settings Page -->
             <div id="settings-page" class="page-content page-transition hidden">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">Settings & Configuration</h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                    <!-- API Configuration -->
-                    <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">API Configuration</h3>
-                        <form id="api-form" class="space-y-4">
-                            <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">OpenAI API Key</label>
-                                <input type="password" id="openai-key" placeholder="sk-..." class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                <p class="text-xs text-gray-500 mt-1">Required for AI message generation</p>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">WhatsApp Business API Token</label>
-                                <input type="password" id="whatsapp-token" placeholder="Enter WhatsApp Business API token" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                <p class="text-xs text-gray-500 mt-1">Get from Facebook Developer Console</p>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Instagram Graph API Token</label>
-                                <input type="password" id="instagram-token" placeholder="Enter Instagram Graph API token" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                <p class="text-xs text-gray-500 mt-1">Required for Instagram DM automation</p>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">SMTP Configuration</label>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <input type="text" id="smtp-host" placeholder="smtp.gmail.com" class="px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                    <input type="text" id="smtp-port" placeholder="587" class="px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                </div>
-                                <div class="grid grid-cols-2 gap-4 mt-2">
-                                    <input type="email" id="smtp-user" placeholder="your-email@gmail.com" class="px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                    <input type="password" id="smtp-pass" placeholder="App Password" class="px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                                </div>
-                            </div>
-                            <button type="submit" class="w-full btn-success py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
-                                <i class="fas fa-save mr-2"></i>Save Configuration
-                            </button>
-                        </form>
-                    </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">Settings & Configuration</h2>
 
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                     <!-- Profile Settings -->
                     <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Profile Settings</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Profile Settings</h3>
                         <form id="profile-form" class="space-y-4">
                             <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Full Name</label>
-                                <input type="text" id="profile-name" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">Full Name</label>
+                                <input type="text" id="profile-name"
+                                    class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                             </div>
                             <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Email</label>
-                                <input type="email" id="profile-email" readonly class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white text-sm sm:text-base">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                                <input type="email" id="profile-email" readonly
+                                    class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl bg-gray-50 text-gray-900 text-sm sm:text-base">
                             </div>
                             <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Phone</label>
-                                <input type="tel" id="profile-phone" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">Phone</label>
+                                <input type="tel" id="profile-phone"
+                                    class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                             </div>
                             <div>
-                                <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Time Zone</label>
-                                <select id="profile-timezone" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                                <label class="block text-gray-700 text-sm font-semibold mb-2">Time Zone</label>
+                                <select id="profile-timezone"
+                                    class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                                     <option value="UTC">UTC</option>
                                     <option value="America/New_York">Eastern Time</option>
                                     <option value="America/Chicago">Central Time</option>
@@ -1077,10 +1137,54 @@
                                     <option value="America/Los_Angeles">Pacific Time</option>
                                 </select>
                             </div>
-                            <button type="submit" class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+                            <button type="submit"
+                                class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                                 Update Profile
                             </button>
                         </form>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="professional-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">Notification Settings</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Email Notifications</h4>
+                                    <p class="text-sm text-gray-600">Receive updates via email</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Push Notifications</h4>
+                                    <p class="text-sm text-gray-600">Browser push notifications</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Automation Alerts</h4>
+                                    <p class="text-sm text-gray-600">Get notified when automations trigger</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1090,22 +1194,25 @@
     <!-- Modals -->
     <div id="modal-overlay" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 items-center justify-center">
         <!-- Automation Modal -->
-        <div id="automation-modal" class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-lg w-full mx-4 hidden">
+        <div id="automation-modal"
+            class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-lg w-full mx-4 hidden">
             <div class="p-6 sm:p-8">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Create Smart Automation</h3>
-                    <button onclick="hideModal('automation-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Create Smart Automation</h3>
+                    <button onclick="hideModal('automation-modal')" class="text-gray-400 hover:text-gray-600">
                         <i class="fas fa-times text-lg sm:text-xl"></i>
                     </button>
                 </div>
                 <form id="automation-form" class="space-y-4">
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Automation Name</label>
-                        <input type="text" id="automation-name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Automation Name</label>
+                        <input type="text" id="automation-name" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Platform</label>
-                        <select id="automation-platform" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Platform</label>
+                        <select id="automation-platform" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                             <option value="">Select Platform</option>
                             <option value="whatsapp">WhatsApp</option>
                             <option value="instagram">Instagram DM</option>
@@ -1114,8 +1221,9 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Trigger</label>
-                        <select id="automation-trigger" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Trigger</label>
+                        <select id="automation-trigger" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                             <option value="">Select Trigger</option>
                             <option value="new_lead">New Lead Added</option>
                             <option value="keyword">Keyword Match</option>
@@ -1125,17 +1233,23 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Message Template</label>
-                        <textarea id="automation-message" rows="4" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base" placeholder="Hi {{name}}, welcome to our community! 🎉"></textarea>
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Message Template</label>
+                        <textarea id="automation-message" rows="4" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                            placeholder="Hi {{name}}, welcome to our community! 🎉"></textarea>
                         <p class="text-xs text-gray-500 mt-1">Use {{name}}, {{email}}, {{phone}} for personalization</p>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <input type="checkbox" id="automation-ai-enabled" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                        <label for="automation-ai-enabled" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Enable AI Message Enhancement</label>
+                        <input type="checkbox" id="automation-ai-enabled"
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="automation-ai-enabled" class="text-gray-700 text-sm font-semibold">Enable AI Message
+                            Enhancement</label>
                     </div>
                     <div class="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4 pt-4">
-                        <button type="button" onclick="hideModal('automation-modal')" class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-semibold text-sm sm:text-base">Cancel</button>
-                        <button type="submit" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                        <button type="button" onclick="hideModal('automation-modal')"
+                            class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 hover:text-gray-800 font-semibold text-sm sm:text-base">Cancel</button>
+                        <button type="submit"
+                            class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                             Create Automation
                         </button>
                     </div>
@@ -1147,84 +1261,101 @@
         <div id="lead-modal" class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-md w-full mx-4 hidden">
             <div class="p-6 sm:p-8">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Add New Lead</h3>
-                    <button onclick="hideModal('lead-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Add New Lead</h3>
+                    <button onclick="hideModal('lead-modal')" class="text-gray-400 hover:text-gray-600">
                         <i class="fas fa-times text-lg sm:text-xl"></i>
                     </button>
                 </div>
                 <form id="lead-form" class="space-y-4">
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Name</label>
-                        <input type="text" id="lead-name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
+                        <input type="text" id="lead-name" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Email</label>
-                        <input type="email" id="lead-email" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="lead-email"
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Phone/WhatsApp</label>
-                        <input type="tel" id="lead-phone" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Phone/WhatsApp</label>
+                        <input type="tel" id="lead-phone"
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Instagram Handle</label>
-                        <input type="text" id="lead-instagram" placeholder="@username" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Instagram Handle</label>
+                        <input type="text" id="lead-instagram" placeholder="@username"
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Status</label>
-                        <select id="lead-status" class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Status</label>
+                        <select id="lead-status"
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                             <option value="cold">Cold</option>
                             <option value="warm">Warm</option>
                             <option value="hot">Hot</option>
                         </select>
                     </div>
                     <div class="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4 pt-4">
-                        <button type="button" onclick="hideModal('lead-modal')" class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-semibold text-sm sm:text-base">Cancel</button>
-                        <button type="submit" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">Add Lead</button>
+                        <button type="button" onclick="hideModal('lead-modal')"
+                            class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 hover:text-gray-800 font-semibold text-sm sm:text-base">Cancel</button>
+                        <button type="submit"
+                            class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">Add
+                            Lead</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <!-- Import Leads Modal -->
-        <div id="import-leads-modal" class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-md w-full mx-4 hidden">
+        <div id="import-leads-modal"
+            class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-md w-full mx-4 hidden">
             <div class="p-6 sm:p-8">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Import Leads</h3>
-                    <button onclick="hideModal('import-leads-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Import Leads</h3>
+                    <button onclick="hideModal('import-leads-modal')" class="text-gray-400 hover:text-gray-600">
                         <i class="fas fa-times text-lg sm:text-xl"></i>
                     </button>
                 </div>
                 <form id="import-form" class="space-y-4">
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">CSV File</label>
-                        <input type="file" id="csv-file" accept=".csv" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">CSV should have columns: name, email, phone, instagram, status</p>
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">CSV File</label>
+                        <input type="file" id="csv-file" accept=".csv" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
+                        <p class="text-xs text-gray-500 mt-1">CSV should have columns: name, email, phone, instagram,
+                            status</p>
                     </div>
                     <div class="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4 pt-4">
-                        <button type="button" onclick="hideModal('import-leads-modal')" class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-semibold text-sm sm:text-base">Cancel</button>
-                        <button type="submit" class="btn-success px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">Import Leads</button>
+                        <button type="button" onclick="hideModal('import-leads-modal')"
+                            class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 hover:text-gray-800 font-semibold text-sm sm:text-base">Cancel</button>
+                        <button type="submit"
+                            class="btn-success px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">Import
+                            Leads</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <!-- Campaign Modal -->
-        <div id="campaign-modal" class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-lg w-full mx-4 hidden">
+        <div id="campaign-modal"
+            class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-lg w-full mx-4 hidden">
             <div class="p-6 sm:p-8">
                 <div class="flex justify-between items-center mb-4 sm:mb-6">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Create Campaign</h3>
-                    <button onclick="hideModal('campaign-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Create Campaign</h3>
+                    <button onclick="hideModal('campaign-modal')" class="text-gray-400 hover:text-gray-600">
                         <i class="fas fa-times text-lg sm:text-xl"></i>
                     </button>
                 </div>
                 <form id="campaign-form" class="space-y-4">
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Campaign Name</label>
-                        <input type="text" id="campaign-name" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Campaign Name</label>
+                        <input type="text" id="campaign-name" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Platform</label>
-                        <select id="campaign-platform" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base">
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Platform</label>
+                        <select id="campaign-platform" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
                             <option value="">Select Platform</option>
                             <option value="whatsapp">WhatsApp</option>
                             <option value="instagram">Instagram DM</option>
@@ -1233,45 +1364,60 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Message</label>
-                        <textarea id="campaign-message" rows="4" required class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm sm:text-base" placeholder="Enter your message..."></textarea>
+                        <label class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
+                        <textarea id="campaign-message" rows="4" required
+                            class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                            placeholder="Enter your message..."></textarea>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <input type="checkbox" id="campaign-ai-enabled" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                        <label for="campaign-ai-enabled" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Enable AI Message Generation</label>
+                        <input type="checkbox" id="campaign-ai-enabled"
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="campaign-ai-enabled" class="text-gray-700 text-sm font-semibold">Enable AI Message
+                            Generation</label>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <input type="checkbox" id="campaign-voice-enabled" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                        <label for="campaign-voice-enabled" class="text-gray-700 dark:text-gray-300 text-sm font-semibold">Enable Voice Messages</label>
+                        <input type="checkbox" id="campaign-voice-enabled"
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="campaign-voice-enabled" class="text-gray-700 text-sm font-semibold">Enable Voice
+                            Messages</label>
                     </div>
                     <div class="flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4 pt-4">
-                        <button type="button" onclick="hideModal('campaign-modal')" class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-semibold text-sm sm:text-base">Cancel</button>
-                        <button type="submit" class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">Create Campaign</button>
+                        <button type="button" onclick="hideModal('campaign-modal')"
+                            class="px-4 sm:px-6 py-2 sm:py-3 text-gray-600 hover:text-gray-800 font-semibold text-sm sm:text-base">Cancel</button>
+                        <button type="submit"
+                            class="btn-primary px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">Create
+                            Campaign</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <!-- Upgrade Modal -->
-        <div id="upgrade-modal" class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-md w-full mx-4 hidden">
+        <div id="upgrade-modal"
+            class="professional-card rounded-2xl sm:rounded-3xl shadow-xl max-w-md w-full mx-4 hidden">
             <div class="p-6 sm:p-8 text-center">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 logo-animation">
+                <div
+                    class="w-16 h-16 sm:w-20 sm:h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 logo-animation">
                     <i class="fas fa-crown text-white text-2xl sm:text-3xl"></i>
                 </div>
-                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">Upgrade Your Plan</h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm sm:text-base">Your free trial expires in 6 days. Upgrade now to continue using all features!</p>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Upgrade Your Plan</h3>
+                <p class="text-gray-600 mb-6 text-sm sm:text-base">Your free trial expires in 6 days. Upgrade now to
+                    continue using all features!</p>
                 <div class="space-y-3">
-                    <button onclick="upgradePlan('basic')" class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+                    <button onclick="upgradePlan('basic')"
+                        class="w-full btn-primary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                         Basic - $49/month
                     </button>
-                    <button onclick="upgradePlan('pro')" class="w-full btn-secondary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
+                    <button onclick="upgradePlan('pro')"
+                        class="w-full btn-secondary py-2 sm:py-3 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base">
                         Pro - $99/month (Most Popular)
                     </button>
-                    <button onclick="upgradePlan('enterprise')" class="w-full bg-gray-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base">
+                    <button onclick="upgradePlan('enterprise')"
+                        class="w-full bg-gray-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base">
                         Enterprise - $299/month
                     </button>
                 </div>
-                <button onclick="hideModal('upgrade-modal')" class="mt-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-sm">
+                <button onclick="hideModal('upgrade-modal')" class="mt-4 text-gray-500 hover:text-gray-700 text-sm">
                     Maybe later
                 </button>
             </div>
@@ -1281,555 +1427,77 @@
     <!-- Toast Container -->
     <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-3"></div>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
-        // Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyD5f7F7H0cnF0x2DNKBCe3jFWN5H8Q0nIY",
-            authDomain: "nexarion-ai.firebaseapp.com",
-            projectId: "nexarion-ai",
-            storageBucket: "nexarion-ai.firebasestorage.app",
-            messagingSenderId: "192258451282",
-            appId: "1:192258451282:web:50afac10bf234a892afc8b",
-            measurementId: "G-6S1CNN4F23"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-
-        // API Configuration - Add your API keys here
+        // API Configuration - Replace with your actual API keys
         const API_CONFIG = {
-            OPENAI_API_KEY: '', // Add your OpenAI API key
-            WHATSAPP_TOKEN: '', // Add your WhatsApp Business API token
-            INSTAGRAM_TOKEN: '', // Add your Instagram Graph API token
+            OPENAI_API_KEY: 'sk-your-openai-api-key-here',
+            WHATSAPP_TOKEN: 'your-whatsapp-business-api-token',
+            INSTAGRAM_TOKEN: 'your-instagram-graph-api-token',
+            ELEVENLABS_API_KEY: 'your-elevenlabs-api-key',
             SMTP_CONFIG: {
                 host: 'smtp.gmail.com',
                 port: 587,
-                user: '', // Add your email
-                pass: ''  // Add your app password
+                user: 'your-email@gmail.com',
+                pass: 'your-app-password'
             }
         };
 
         // Global variables
-        let currentUser = null;
+        let currentUser = { uid: 'demo-user', email: 'demo@example.com', displayName: 'Demo User' };
         let userPlan = 'trial';
         let isNewUser = false;
         let trialDaysLeft = 6;
+        let leads = [];
+        let automations = [];
+        let campaigns = [];
 
-        // Check for new user flag from URL params
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('welcome') === 'true') {
-            isNewUser = true;
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+        // Simulate data
+        const mockData = {
+            stats: {
+                messagesSent: 1247,
+                responseRate: 68,
+                activeLeads: 142,
+                activeAutomations: 3
+            },
+            leads: [
+                { id: '1', name: 'John Doe', email: 'john@example.com', phone: '+1234567890', instagram: '@johndoe', status: 'warm', lastContact: new Date() },
+                { id: '2', name: 'Jane Smith', email: 'jane@example.com', phone: '+0987654321', instagram: '@janesmith', status: 'hot', lastContact: new Date() },
+                { id: '3', name: 'Mike Johnson', email: 'mike@example.com', phone: '+1122334455', instagram: '@mikej', status: 'cold', lastContact: null }
+            ]
+        };
 
-        // Check authentication state
-        auth.onAuthStateChanged(async (user) => {
-            if (user) {
-                currentUser = user;
-                await loadUserData();
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
                 showDashboard();
-                if (isNewUser) {
+                loadDashboardStats();
+                loadLeads();
+                loadAutomations();
+
+                // Check for new user welcome
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('welcome') === 'true') {
                     showWelcomeModal();
+                    window.history.replaceState({}, document.title, window.location.pathname);
                 }
-                startAutomationEngine();
-            } else {
-                window.location.href = 'auth.html';
-            }
+            }, 2000);
         });
-
-        // Load user data from Firestore
-        async function loadUserData() {
-            try {
-                const userDoc = await db.collection('users').doc(currentUser.uid).get();
-                if (userDoc.exists) {
-                    const userData = userDoc.data();
-                    document.getElementById('user-name').textContent = userData.displayName || currentUser.displayName || 'User';
-                    document.getElementById('dashboard-user-name').textContent = userData.displayName || currentUser.displayName || 'User';
-                    userPlan = userData.plan || 'trial';
-                    trialDaysLeft = userData.trialDaysLeft || 6;
-                    
-                    // Update trial display
-                    document.getElementById('trial-days').textContent = `${trialDaysLeft} days remaining`;
-                    
-                    // Update avatar
-                    const avatar = document.getElementById('user-avatar');
-                    if (userData.photoURL || currentUser.photoURL) {
-                        avatar.src = userData.photoURL || currentUser.photoURL;
-                    } else {
-                        avatar.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(userData.displayName || 'User')}&background=667eea&color=fff`;
-                    }
-                    
-                    // Load API keys
-                    if (userData.apiKeys) {
-                        Object.assign(API_CONFIG, userData.apiKeys);
-                        updateConnectionStatus();
-                    }
-                    
-                    await loadDashboardStats();
-                    await loadLeads();
-                    await loadAutomations();
-                } else {
-                    await createUserDocument();
-                }
-            } catch (error) {
-                console.error('Error loading user data:', error);
-                showToast('Error loading user data', 'error');
-            }
-        }
-
-        // Create user document
-        async function createUserDocument() {
-            try {
-                await db.collection('users').doc(currentUser.uid).set({
-                    uid: currentUser.uid,
-                    email: currentUser.email,
-                    displayName: currentUser.displayName || 'User',
-                    photoURL: currentUser.photoURL || '',
-                    plan: 'trial',
-                    trialDaysLeft: 7,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    stats: {
-                        messagesSent: 0,
-                        responseRate: 0,
-                        activeLeads: 0,
-                        activeAutomations: 0
-                    },
-                    apiKeys: {},
-                    settings: {
-                        theme: 'light',
-                        notifications: true,
-                        timezone: 'UTC'
-                    }
-                });
-                await loadUserData();
-            } catch (error) {
-                console.error('Error creating user document:', error);
-                showToast('Error setting up account', 'error');
-            }
-        }
-
-        // Update connection status
-        function updateConnectionStatus() {
-            const whatsappStatus = document.getElementById('whatsapp-status');
-            const instagramStatus = document.getElementById('instagram-status');
-            const emailStatus = document.getElementById('email-status');
-
-            if (whatsappStatus) {
-                whatsappStatus.className = API_CONFIG.WHATSAPP_TOKEN ? 'connection-status connected' : 'connection-status disconnected';
-                whatsappStatus.textContent = API_CONFIG.WHATSAPP_TOKEN ? 'Connected' : 'Disconnected';
-            }
-
-            if (instagramStatus) {
-                instagramStatus.className = API_CONFIG.INSTAGRAM_TOKEN ? 'connection-status connected' : 'connection-status disconnected';
-                instagramStatus.textContent = API_CONFIG.INSTAGRAM_TOKEN ? 'Connected' : 'Disconnected';
-            }
-
-            if (emailStatus) {
-                emailStatus.className = API_CONFIG.SMTP_CONFIG.user ? 'connection-status connected' : 'connection-status disconnected';
-                emailStatus.textContent = API_CONFIG.SMTP_CONFIG.user ? 'Connected' : 'Disconnected';
-            }
-        }
-
-        // Social media connection functions
-        async function connectWhatsApp() {
-            showToast('Redirecting to WhatsApp Business API setup...', 'info');
-            // In a real implementation, this would redirect to Facebook Developer Console
-            setTimeout(() => {
-                const token = prompt('Enter your WhatsApp Business API Token:');
-                if (token) {
-                    API_CONFIG.WHATSAPP_TOKEN = token;
-                    updateConnectionStatus();
-                    saveApiKeys();
-                    showToast('WhatsApp connected successfully!', 'success');
-                }
-            }, 1000);
-        }
-
-        async function connectInstagram() {
-            showToast('Redirecting to Instagram Graph API setup...', 'info');
-            // In a real implementation, this would redirect to Facebook Developer Console
-            setTimeout(() => {
-                const token = prompt('Enter your Instagram Graph API Token:');
-                if (token) {
-                    API_CONFIG.INSTAGRAM_TOKEN = token;
-                    updateConnectionStatus();
-                    saveApiKeys();
-                    showToast('Instagram connected successfully!', 'success');
-                }
-            }, 1000);
-        }
-
-        async function connectEmail() {
-            showToast('Opening email configuration...', 'info');
-            // Navigate to settings page
-            showPage('settings');
-            document.querySelector('[data-page="settings"]').click();
-        }
-
-        // Save API keys to database
-        async function saveApiKeys() {
-            try {
-                await db.collection('users').doc(currentUser.uid).update({
-                    apiKeys: API_CONFIG,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            } catch (error) {
-                console.error('Error saving API keys:', error);
-            }
-        }
-
-        // Load dashboard stats
-        async function loadDashboardStats() {
-            try {
-                const userDoc = await db.collection('users').doc(currentUser.uid).get();
-                if (userDoc.exists) {
-                    const stats = userDoc.data().stats || {};
-                    document.getElementById('messages-sent').textContent = stats.messagesSent || 0;
-                    document.getElementById('response-rate').textContent = `${stats.responseRate || 0}%`;
-                    document.getElementById('active-leads').textContent = stats.activeLeads || 0;
-                    document.getElementById('active-automations').textContent = stats.activeAutomations || 0;
-                }
-            } catch (error) {
-                console.error('Error loading stats:', error);
-            }
-        }
-
-        // Load leads
-        async function loadLeads() {
-            try {
-                const leadsSnapshot = await db.collection('leads')
-                    .where('userId', '==', currentUser.uid)
-                    .orderBy('createdAt', 'desc')
-                    .get();
-
-                const leadsTable = document.getElementById('leads-table');
-                let coldCount = 0, warmCount = 0, hotCount = 0, closedCount = 0;
-
-                if (leadsSnapshot.empty) {
-                    leadsTable.innerHTML = '<tr><td colspan="5" class="text-center py-8 sm:py-12 text-gray-500 dark:text-gray-400">No leads found</td></tr>';
-                } else {
-                    leadsTable.innerHTML = '';
-                    leadsSnapshot.forEach(doc => {
-                        const lead = { id: doc.id, ...doc.data() };
-                        
-                        switch(lead.status) {
-                            case 'cold': coldCount++; break;
-                            case 'warm': warmCount++; break;
-                            case 'hot': hotCount++; break;
-                            case 'closed': closedCount++; break;
-                        }
-
-                        const row = document.createElement('tr');
-                        row.className = 'border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700';
-                        row.innerHTML = `
-                            <td class="py-3 px-2 sm:px-4 font-medium text-gray-900 dark:text-white text-sm sm:text-base">${lead.name}</td>
-                            <td class="py-3 px-2 sm:px-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
-                                ${lead.email ? `<div><i class="fas fa-envelope mr-1"></i>${lead.email}</div>` : ''}
-                                ${lead.phone ? `<div><i class="fab fa-whatsapp mr-1"></i>${lead.phone}</div>` : ''}
-                                ${lead.instagram ? `<div><i class="fab fa-instagram mr-1"></i>${lead.instagram}</div>` : ''}
-                            </td>
-                            <td class="py-3 px-2 sm:px-4">
-                                <span class="px-2 sm:px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(lead.status)}">
-                                    ${lead.status.charAt(0).toUpperCase() + lead.status.slice(1)}
-                                </span>
-                            </td>
-                            <td class="py-3 px-2 sm:px-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm hidden sm:table-cell">
-                                ${lead.lastContact ? new Date(lead.lastContact.toDate()).toLocaleDateString() : 'Never'}
-                            </td>
-                            <td class="py-3 px-2 sm:px-4">
-                                <div class="flex space-x-1 sm:space-x-2">
-                                    <button onclick="sendMessage('${lead.id}')" class="text-green-600 hover:text-green-800 p-1" title="Send Message">
-                                        <i class="fas fa-paper-plane text-xs sm:text-sm"></i>
-                                    </button>
-                                    <button onclick="editLead('${lead.id}')" class="text-blue-600 hover:text-blue-800 p-1" title="Edit">
-                                        <i class="fas fa-edit text-xs sm:text-sm"></i>
-                                    </button>
-                                    <button onclick="deleteLead('${lead.id}')" class="text-red-600 hover:text-red-800 p-1" title="Delete">
-                                        <i class="fas fa-trash text-xs sm:text-sm"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        `;
-                        leadsTable.appendChild(row);
-                    });
-                }
-
-                // Update lead counts
-                document.getElementById('cold-leads').textContent = coldCount;
-                document.getElementById('warm-leads').textContent = warmCount;
-                document.getElementById('hot-leads').textContent = hotCount;
-                document.getElementById('closed-leads').textContent = closedCount;
-
-            } catch (error) {
-                console.error('Error loading leads:', error);
-                showToast('Error loading leads', 'error');
-            }
-        }
-
-        // Load automations
-        async function loadAutomations() {
-            try {
-                const automationsSnapshot = await db.collection('automations')
-                    .where('userId', '==', currentUser.uid)
-                    .where('status', '==', 'active')
-                    .get();
-
-                const automationsList = document.getElementById('automations-list');
-                if (automationsList) {
-                    automationsList.innerHTML = '';
-                    
-                    if (automationsSnapshot.empty) {
-                        automationsList.innerHTML = '<p class="text-gray-500 dark:text-gray-400 text-center py-8">No active automations</p>';
-                    } else {
-                        automationsSnapshot.forEach(doc => {
-                            const automation = { id: doc.id, ...doc.data() };
-                            const automationElement = document.createElement('div');
-                            automationElement.className = 'flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-xl space-y-2 sm:space-y-0';
-                            automationElement.innerHTML = `
-                                <div class="flex items-center">
-                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-                                    <div>
-                                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">${automation.name}</h4>
-                                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Platform: ${automation.platform} | Trigger: ${automation.trigger}</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Active</span>
-                                    <button onclick="toggleAutomation('${automation.id}')" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-                                        <i class="fas fa-pause"></i>
-                                    </button>
-                                </div>
-                            `;
-                            automationsList.appendChild(automationElement);
-                        });
-                    }
-                }
-            } catch (error) {
-                console.error('Error loading automations:', error);
-            }
-        }
-
-        // Automation Engine
-        function startAutomationEngine() {
-            // Check for new leads every 30 seconds
-            setInterval(checkForNewLeadTriggers, 30000);
-            
-            // Check for scheduled automations every minute
-            setInterval(checkScheduledAutomations, 60000);
-            
-            // Check for follow-up automations every 5 minutes
-            setInterval(checkFollowupAutomations, 300000);
-        }
-
-        // Check for new lead triggers
-        async function checkForNewLeadTriggers() {
-            try {
-                const automations = await db.collection('automations')
-                    .where('userId', '==', currentUser.uid)
-                    .where('status', '==', 'active')
-                    .where('trigger', '==', 'new_lead')
-                    .get();
-
-                const recentLeads = await db.collection('leads')
-                    .where('userId', '==', currentUser.uid)
-                    .where('createdAt', '>', new Date(Date.now() - 60000)) // Last minute
-                    .get();
-
-                recentLeads.forEach(leadDoc => {
-                    const lead = leadDoc.data();
-                    automations.forEach(automationDoc => {
-                        const automation = automationDoc.data();
-                        executeAutomation(automation, lead);
-                    });
-                });
-            } catch (error) {
-                console.error('Error checking new lead triggers:', error);
-            }
-        }
-
-        // Check scheduled automations
-        async function checkScheduledAutomations() {
-            // Implementation for scheduled automations
-            console.log('Checking scheduled automations...');
-        }
-
-        // Check follow-up automations
-        async function checkFollowupAutomations() {
-            // Implementation for follow-up automations
-            console.log('Checking follow-up automations...');
-        }
-
-        // Execute automation
-        async function executeAutomation(automation, lead) {
-            try {
-                let message = automation.message;
-                
-                // Replace placeholders
-                message = message.replace(/{{name}}/g, lead.name || 'there');
-                message = message.replace(/{{email}}/g, lead.email || '');
-                message = message.replace(/{{phone}}/g, lead.phone || '');
-
-                // AI enhancement if enabled
-                if (automation.aiEnabled && API_CONFIG.OPENAI_API_KEY) {
-                    message = await enhanceMessageWithAI(message, lead);
-                }
-
-                // Send message based on platform
-                switch (automation.platform) {
-                    case 'whatsapp':
-                        if (lead.phone) await sendWhatsAppMessage(lead.phone, message);
-                        break;
-                    case 'instagram':
-                        if (lead.instagram) await sendInstagramDM(lead.instagram, message);
-                        break;
-                    case 'email':
-                        if (lead.email) await sendEmail(lead.email, `Message from ${automation.name}`, message);
-                        break;
-                    case 'all':
-                        if (lead.phone) await sendWhatsAppMessage(lead.phone, message);
-                        if (lead.instagram) await sendInstagramDM(lead.instagram, message);
-                        if (lead.email) await sendEmail(lead.email, `Message from ${automation.name}`, message);
-                        break;
-                }
-
-                // Log activity
-                await addActivity('automation', `Automation "${automation.name}" sent message to ${lead.name}`);
-                
-                // Update stats
-                await updateMessageStats();
-
-            } catch (error) {
-                console.error('Error executing automation:', error);
-                showToast(`Error executing automation: ${error.message}`, 'error');
-            }
-        }
-
-        // Send WhatsApp message
-        async function sendWhatsAppMessage(phone, message) {
-            if (!API_CONFIG.WHATSAPP_TOKEN) {
-                throw new Error('WhatsApp API token not configured');
-            }
-
-            // Simulate API call
-            console.log(`Sending WhatsApp message to ${phone}: ${message}`);
-            showToast(`WhatsApp message sent to ${phone}`, 'success');
-            return { success: true };
-        }
-
-        // Send Instagram DM
-        async function sendInstagramDM(username, message) {
-            if (!API_CONFIG.INSTAGRAM_TOKEN) {
-                throw new Error('Instagram API token not configured');
-            }
-
-            // Simulate API call
-            console.log(`Sending Instagram DM to ${username}: ${message}`);
-            showToast(`Instagram DM sent to ${username}`, 'success');
-            return { success: true };
-        }
-
-        // Send Email
-        async function sendEmail(to, subject, message) {
-            if (!API_CONFIG.SMTP_CONFIG.user || !API_CONFIG.SMTP_CONFIG.pass) {
-                throw new Error('SMTP configuration not set');
-            }
-
-            // Simulate email sending
-            console.log(`Sending email to ${to}: ${subject} - ${message}`);
-            showToast(`Email sent to ${to}`, 'success');
-            return { success: true };
-        }
-
-        // Enhance message with AI
-        async function enhanceMessageWithAI(message, lead) {
-            if (!API_CONFIG.OPENAI_API_KEY) return message;
-
-            try {
-                // Simulate AI enhancement
-                console.log('Enhancing message with AI...');
-                return message + ' (AI Enhanced)';
-            } catch (error) {
-                console.error('Error enhancing message with AI:', error);
-                return message;
-            }
-        }
-
-        // Update message stats
-        async function updateMessageStats() {
-            try {
-                const userRef = db.collection('users').doc(currentUser.uid);
-                await userRef.update({
-                    'stats.messagesSent': firebase.firestore.FieldValue.increment(1)
-                });
-                await loadDashboardStats();
-            } catch (error) {
-                console.error('Error updating stats:', error);
-            }
-        }
-
-        // Add activity log
-        async function addActivity(type, description) {
-            try {
-                await db.collection('activities').add({
-                    userId: currentUser.uid,
-                    type: type,
-                    description: description,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                });
-            } catch (error) {
-                console.error('Error adding activity:', error);
-            }
-        }
-
-        // Create automation templates
-        function createWelcomeAutomation() {
-            document.getElementById('automation-name').value = 'Welcome Series';
-            document.getElementById('automation-platform').value = 'all';
-            document.getElementById('automation-trigger').value = 'new_lead';
-            document.getElementById('automation-message').value = 'Hi {{name}}! 👋 Welcome to our community! We\'re excited to have you on board. Is there anything specific you\'d like to know about our services?';
-            document.getElementById('automation-ai-enabled').checked = true;
-            showModal('automation-modal');
-        }
-
-        function createFollowupAutomation() {
-            document.getElementById('automation-name').value = 'Follow-up Sequence';
-            document.getElementById('automation-platform').value = 'whatsapp';
-            document.getElementById('automation-trigger').value = 'no_reply';
-            document.getElementById('automation-message').value = 'Hi {{name}}, I wanted to follow up on my previous message. Are you still interested in learning more about our services? Let me know if you have any questions!';
-            showModal('automation-modal');
-        }
-
-        function createBirthdayAutomation() {
-            document.getElementById('automation-name').value = 'Birthday Wishes';
-            document.getElementById('automation-platform').value = 'all';
-            document.getElementById('automation-trigger').value = 'birthday';
-            document.getElementById('automation-message').value = '🎉 Happy Birthday {{name}}! 🎂 Wishing you a fantastic day filled with joy and celebration! As a birthday gift, here\'s a special offer just for you...';
-            showModal('automation-modal');
-        }
-
-        // Get status color classes
-        function getStatusColor(status) {
-            switch(status) {
-                case 'cold': return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
-                case 'warm': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
-                case 'hot': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
-                case 'closed': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
-                default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
-            }
-        }
 
         // Show dashboard
         function showDashboard() {
             document.getElementById('loading-screen').style.display = 'none';
             document.body.style.overflow = 'auto';
+
+            // Update user info
+            document.getElementById('user-name').textContent = currentUser.displayName;
+            document.getElementById('dashboard-user-name').textContent = currentUser.displayName;
+            document.getElementById('trial-days').textContent = `${trialDaysLeft} days remaining`;
+
+            // Update avatar
+            const avatar = document.getElementById('user-avatar');
+            avatar.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(currentUser.displayName)}&background=667eea&color=fff`;
         }
 
         // Show welcome modal
@@ -1844,20 +1512,105 @@
             welcomeModal.classList.remove('show');
         });
 
-        // Navigation with page transitions
+        // Load dashboard stats
+        function loadDashboardStats() {
+            document.getElementById('messages-sent').textContent = mockData.stats.messagesSent.toLocaleString();
+            document.getElementById('response-rate').textContent = `${mockData.stats.responseRate}%`;
+            document.getElementById('active-leads').textContent = mockData.stats.activeLeads;
+            document.getElementById('active-automations').textContent = mockData.stats.activeAutomations;
+        }
+
+        // Load leads
+        function loadLeads() {
+            leads = mockData.leads;
+            const leadsTable = document.getElementById('leads-table');
+            let coldCount = 0, warmCount = 0, hotCount = 0, closedCount = 0;
+
+            if (leads.length === 0) {
+                leadsTable.innerHTML = '<tr><td colspan="5" class="text-center py-8 sm:py-12 text-gray-500">No leads found</td></tr>';
+            } else {
+                leadsTable.innerHTML = '';
+                leads.forEach(lead => {
+                    switch (lead.status) {
+                        case 'cold': coldCount++; break;
+                        case 'warm': warmCount++; break;
+                        case 'hot': hotCount++; break;
+                        case 'closed': closedCount++; break;
+                    }
+
+                    const row = document.createElement('tr');
+                    row.className = 'border-b border-gray-200 hover:bg-gray-50';
+                    row.innerHTML = `
+                        <td class="py-3 px-2 sm:px-4 font-medium text-gray-900 text-sm sm:text-base">${lead.name}</td>
+                        <td class="py-3 px-2 sm:px-4 text-gray-600 text-xs sm:text-sm">
+                            ${lead.email ? `<div><i class="fas fa-envelope mr-1"></i>${lead.email}</div>` : ''}
+                            ${lead.phone ? `<div><i class="fab fa-whatsapp mr-1"></i>${lead.phone}</div>` : ''}
+                            ${lead.instagram ? `<div><i class="fab fa-instagram mr-1"></i>${lead.instagram}</div>` : ''}
+                        </td>
+                        <td class="py-3 px-2 sm:px-4">
+                            <span class="px-2 sm:px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(lead.status)}">
+                                ${lead.status.charAt(0).toUpperCase() + lead.status.slice(1)}
+                            </span>
+                        </td>
+                        <td class="py-3 px-2 sm:px-4 text-gray-600 text-xs sm:text-sm hidden sm:table-cell">
+                            ${lead.lastContact ? new Date(lead.lastContact).toLocaleDateString() : 'Never'}
+                        </td>
+                        <td class="py-3 px-2 sm:px-4">
+                            <div class="flex space-x-1 sm:space-x-2">
+                                <button onclick="sendMessage('${lead.id}')" class="text-green-600 hover:text-green-800 p-1" title="Send Message">
+                                    <i class="fas fa-paper-plane text-xs sm:text-sm"></i>
+                                </button>
+                                <button onclick="editLead('${lead.id}')" class="text-blue-600 hover:text-blue-800 p-1" title="Edit">
+                                    <i class="fas fa-edit text-xs sm:text-sm"></i>
+                                </button>
+                                <button onclick="deleteLead('${lead.id}')" class="text-red-600 hover:text-red-800 p-1" title="Delete">
+                                    <i class="fas fa-trash text-xs sm:text-sm"></i>
+                                </button>
+                            </div>
+                        </td>
+                    `;
+                    leadsTable.appendChild(row);
+                });
+            }
+
+            // Update lead counts
+            document.getElementById('cold-leads').textContent = coldCount;
+            document.getElementById('warm-leads').textContent = warmCount;
+            document.getElementById('hot-leads').textContent = hotCount;
+            document.getElementById('closed-leads').textContent = closedCount;
+        }
+
+        // Load automations
+        function loadAutomations() {
+            const automationsList = document.getElementById('automations-list');
+            // Default welcome series automation is already shown in HTML
+        }
+
+        // Get status color classes
+        function getStatusColor(status) {
+            switch (status) {
+                case 'cold': return 'bg-red-100 text-red-800';
+                case 'warm': return 'bg-yellow-100 text-yellow-800';
+                case 'hot': return 'bg-green-100 text-green-800';
+                case 'closed': return 'bg-blue-100 text-blue-800';
+                default: return 'bg-gray-100 text-gray-800';
+            }
+        }
+
+        // Navigation
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const page = link.getAttribute('data-page');
                 showPage(page);
-                
+
                 // Update active nav
                 document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('sidebar-active'));
                 link.classList.add('sidebar-active');
-                
+
                 // Update page title
                 document.getElementById('page-title').textContent = link.textContent.trim();
-                
+
                 // Close mobile sidebar
                 const sidebar = document.getElementById('sidebar');
                 const overlay = document.getElementById('sidebar-overlay');
@@ -1873,7 +1626,7 @@
                 p.classList.add('hidden');
                 p.classList.remove('active');
             });
-            
+
             // Show selected page with animation
             const targetPage = document.getElementById(`${page}-page`);
             if (targetPage) {
@@ -1913,37 +1666,6 @@
             }
         });
 
-        // Theme toggle
-        document.getElementById('theme-toggle').addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            const isDark = document.documentElement.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            
-            // Update user preference in database
-            if (currentUser) {
-                db.collection('users').doc(currentUser.uid).update({
-                    'settings.theme': isDark ? 'dark' : 'light'
-                });
-            }
-        });
-
-        // Load theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        }
-
-        // Logout
-        document.getElementById('logout-btn').addEventListener('click', async () => {
-            try {
-                await auth.signOut();
-                window.location.href = 'auth.html';
-            } catch (error) {
-                console.error('Error signing out:', error);
-                showToast('Error signing out', 'error');
-            }
-        });
-
         // Modal functions
         function showModal(modalId) {
             document.getElementById('modal-overlay').classList.add('show');
@@ -1966,220 +1688,136 @@
         });
 
         // Form submissions
-        document.getElementById('lead-form').addEventListener('submit', async (e) => {
+        document.getElementById('lead-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const leadData = {
-                userId: currentUser.uid,
+                id: Date.now().toString(),
                 name: document.getElementById('lead-name').value,
                 email: document.getElementById('lead-email').value,
                 phone: document.getElementById('lead-phone').value,
                 instagram: document.getElementById('lead-instagram').value,
                 status: document.getElementById('lead-status').value,
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                 lastContact: null
             };
 
-            try {
-                await db.collection('leads').add(leadData);
-                showToast('Lead added successfully!', 'success');
-                hideModal('lead-modal');
-                document.getElementById('lead-form').reset();
-                await loadLeads();
-                await addActivity('lead', `New lead added: ${leadData.name}`);
-            } catch (error) {
-                console.error('Error adding lead:', error);
-                showToast('Error adding lead', 'error');
-            }
+            leads.push(leadData);
+            showToast('Lead added successfully!', 'success');
+            hideModal('lead-modal');
+            document.getElementById('lead-form').reset();
+            loadLeads();
         });
 
-        document.getElementById('import-form').addEventListener('submit', async (e) => {
+        document.getElementById('import-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const fileInput = document.getElementById('csv-file');
             const file = fileInput.files[0];
-            
+
             if (!file) {
                 showToast('Please select a CSV file', 'error');
                 return;
             }
 
             const reader = new FileReader();
-            reader.onload = async (event) => {
+            reader.onload = (event) => {
                 try {
                     const csv = event.target.result;
                     const lines = csv.split('\n');
                     const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-                    
-                    const batch = db.batch();
+
                     let count = 0;
-                    
                     for (let i = 1; i < lines.length; i++) {
                         if (lines[i].trim()) {
                             const values = lines[i].split(',').map(v => v.trim());
                             const leadData = {
-                                userId: currentUser.uid,
+                                id: Date.now().toString() + i,
                                 name: values[headers.indexOf('name')] || '',
                                 email: values[headers.indexOf('email')] || '',
                                 phone: values[headers.indexOf('phone')] || '',
                                 instagram: values[headers.indexOf('instagram')] || '',
                                 status: values[headers.indexOf('status')] || 'cold',
-                                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                                 lastContact: null
                             };
-                            
-                            const leadRef = db.collection('leads').doc();
-                            batch.set(leadRef, leadData);
+
+                            leads.push(leadData);
                             count++;
                         }
                     }
-                    
-                    await batch.commit();
+
                     showToast(`${count} leads imported successfully!`, 'success');
                     hideModal('import-leads-modal');
                     document.getElementById('import-form').reset();
-                    await loadLeads();
+                    loadLeads();
                 } catch (error) {
                     console.error('Error importing leads:', error);
                     showToast('Error importing leads', 'error');
                 }
             };
-            
+
             reader.readAsText(file);
         });
 
-        document.getElementById('automation-form').addEventListener('submit', async (e) => {
+        document.getElementById('automation-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const automationData = {
-                userId: currentUser.uid,
+                id: Date.now().toString(),
                 name: document.getElementById('automation-name').value,
                 platform: document.getElementById('automation-platform').value,
                 trigger: document.getElementById('automation-trigger').value,
                 message: document.getElementById('automation-message').value,
                 aiEnabled: document.getElementById('automation-ai-enabled').checked,
-                status: 'active',
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                stats: {
-                    triggered: 0,
-                    sent: 0,
-                    replied: 0
-                }
+                status: 'active'
             };
 
-            try {
-                await db.collection('automations').add(automationData);
-                showToast('Automation created successfully!', 'success');
-                hideModal('automation-modal');
-                document.getElementById('automation-form').reset();
-                await loadAutomations();
-                await addActivity('automation', `New automation created: ${automationData.name}`);
-            } catch (error) {
-                console.error('Error creating automation:', error);
-                showToast('Error creating automation', 'error');
-            }
+            automations.push(automationData);
+            showToast('Automation created successfully!', 'success');
+            hideModal('automation-modal');
+            document.getElementById('automation-form').reset();
+            loadAutomations();
         });
 
-        document.getElementById('campaign-form').addEventListener('submit', async (e) => {
+        document.getElementById('campaign-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const campaignData = {
-                userId: currentUser.uid,
+                id: Date.now().toString(),
                 name: document.getElementById('campaign-name').value,
                 platform: document.getElementById('campaign-platform').value,
                 message: document.getElementById('campaign-message').value,
                 aiEnabled: document.getElementById('campaign-ai-enabled').checked,
                 voiceEnabled: document.getElementById('campaign-voice-enabled').checked,
-                status: 'draft',
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                stats: {
-                    sent: 0,
-                    delivered: 0,
-                    read: 0,
-                    replied: 0
-                }
+                status: 'draft'
             };
 
-            try {
-                await db.collection('campaigns').add(campaignData);
-                showToast('Campaign created successfully!', 'success');
-                hideModal('campaign-modal');
-                document.getElementById('campaign-form').reset();
-                await addActivity('campaign', `New campaign created: ${campaignData.name}`);
-            } catch (error) {
-                console.error('Error creating campaign:', error);
-                showToast('Error creating campaign', 'error');
-            }
+            campaigns.push(campaignData);
+            showToast('Campaign created successfully!', 'success');
+            hideModal('campaign-modal');
+            document.getElementById('campaign-form').reset();
         });
 
-        document.getElementById('api-form').addEventListener('submit', async (e) => {
+        document.getElementById('profile-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const apiKeys = {
-                OPENAI_API_KEY: document.getElementById('openai-key').value,
-                WHATSAPP_TOKEN: document.getElementById('whatsapp-token').value,
-                INSTAGRAM_TOKEN: document.getElementById('instagram-token').value,
-                SMTP_CONFIG: {
-                    host: document.getElementById('smtp-host').value,
-                    port: document.getElementById('smtp-port').value,
-                    user: document.getElementById('smtp-user').value,
-                    pass: document.getElementById('smtp-pass').value
-                }
-            };
 
-            try {
-                await db.collection('users').doc(currentUser.uid).update({
-                    apiKeys: apiKeys,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-                
-                // Update local config
-                Object.assign(API_CONFIG, apiKeys);
-                updateConnectionStatus();
-                
-                showToast('API configuration saved successfully!', 'success');
-                document.getElementById('api-form').reset();
-            } catch (error) {
-                console.error('Error saving API keys:', error);
-                showToast('Error saving API keys', 'error');
-            }
-        });
-
-        document.getElementById('profile-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
             const profileData = {
                 displayName: document.getElementById('profile-name').value,
                 phone: document.getElementById('profile-phone').value,
-                timezone: document.getElementById('profile-timezone').value,
-                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                timezone: document.getElementById('profile-timezone').value
             };
 
-            try {
-                await db.collection('users').doc(currentUser.uid).update(profileData);
-                await currentUser.updateProfile({
-                    displayName: profileData.displayName
-                });
-                showToast('Profile updated successfully!', 'success');
-                await loadUserData();
-            } catch (error) {
-                console.error('Error updating profile:', error);
-                showToast('Error updating profile', 'error');
-            }
+            // Update current user
+            currentUser = { ...currentUser, ...profileData };
+            showToast('Profile updated successfully!', 'success');
+            showDashboard(); // Reload user data
         });
 
         // Voice cloning
         document.getElementById('clone-voice-btn').addEventListener('click', async () => {
             const fileInput = document.getElementById('voice-upload');
-            const apiKey = document.getElementById('elevenlabs-key').value;
-            
+
             if (!fileInput.files[0]) {
                 showToast('Please select a voice file', 'error');
-                return;
-            }
-            
-            if (!apiKey) {
-                showToast('Please enter your ElevenLabs API key', 'error');
                 return;
             }
 
@@ -2190,15 +1828,7 @@
             try {
                 // Simulate voice cloning process
                 await new Promise(resolve => setTimeout(resolve, 3000));
-                
                 showToast('Voice cloned successfully!', 'success');
-                
-                // Save voice ID to user profile
-                await db.collection('users').doc(currentUser.uid).update({
-                    voiceId: 'demo-voice-id',
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
-                
             } catch (error) {
                 console.error('Error cloning voice:', error);
                 showToast('Error cloning voice', 'error');
@@ -2211,7 +1841,7 @@
         // Generate referral link
         function generateReferralLink() {
             const referralCode = currentUser.uid.substring(0, 8);
-            const referralLink = `${window.location.origin}/auth.html?ref=${referralCode}`;
+            const referralLink = `${window.location.origin}?ref=${referralCode}`;
             const referralLinkInput = document.getElementById('referral-link');
             if (referralLinkInput) {
                 referralLinkInput.value = referralLink;
@@ -2219,81 +1849,49 @@
         }
 
         // Copy referral link
-        const copyLinkBtn = document.getElementById('copy-link-btn');
-        if (copyLinkBtn) {
-            copyLinkBtn.addEventListener('click', () => {
-                const referralLink = document.getElementById('referral-link');
-                referralLink.select();
-                document.execCommand('copy');
-                showToast('Referral link copied!', 'success');
-            });
-        }
+        document.getElementById('copy-link-btn')?.addEventListener('click', () => {
+            const referralLink = document.getElementById('referral-link');
+            referralLink.select();
+            document.execCommand('copy');
+            showToast('Referral link copied!', 'success');
+        });
 
         // Upgrade plan function
         function upgradePlan(plan) {
-            // This would integrate with payment processor (Stripe, PayPal, etc.)
             showToast(`Redirecting to payment for ${plan} plan...`, 'info');
-            
-            // Simulate payment process
+
             setTimeout(() => {
                 showToast(`${plan} plan upgrade successful! Welcome to premium features!`, 'success');
                 hideModal('upgrade-modal');
-                
-                // Update user plan in database
-                db.collection('users').doc(currentUser.uid).update({
-                    plan: plan,
-                    trialDaysLeft: 0,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                });
+                userPlan = plan;
+                trialDaysLeft = 0;
             }, 2000);
         }
 
         // Send message to lead
         async function sendMessage(leadId) {
-            try {
-                const leadDoc = await db.collection('leads').doc(leadId).get();
-                const lead = leadDoc.data();
-                
-                const message = prompt(`Send message to ${lead.name}:`, `Hi ${lead.name}, how are you doing today?`);
-                if (message) {
-                    // Send based on available contact methods
-                    if (lead.phone && API_CONFIG.WHATSAPP_TOKEN) {
-                        await sendWhatsAppMessage(lead.phone, message);
-                    } else if (lead.email && API_CONFIG.SMTP_CONFIG.user) {
-                        await sendEmail(lead.email, 'Personal Message', message);
-                    } else if (lead.instagram && API_CONFIG.INSTAGRAM_TOKEN) {
-                        await sendInstagramDM(lead.instagram, message);
-                    } else {
-                        showToast('No API configuration found for available contact methods', 'warning');
-                        return;
-                    }
-                    
-                    // Update last contact
-                    await db.collection('leads').doc(leadId).update({
-                        lastContact: firebase.firestore.FieldValue.serverTimestamp()
-                    });
-                    
-                    showToast('Message sent successfully!', 'success');
-                    await loadLeads();
-                    await addActivity('message', `Manual message sent to ${lead.name}`);
-                }
-            } catch (error) {
-                console.error('Error sending message:', error);
-                showToast('Error sending message', 'error');
+            const lead = leads.find(l => l.id === leadId);
+            if (!lead) return;
+
+            const message = prompt(`Send message to ${lead.name}:`, `Hi ${lead.name}, how are you doing today?`);
+            if (message) {
+                // Simulate sending message
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Update last contact
+                lead.lastContact = new Date();
+
+                showToast('Message sent successfully!', 'success');
+                loadLeads();
             }
         }
 
         // Delete lead
-        async function deleteLead(leadId) {
+        function deleteLead(leadId) {
             if (confirm('Are you sure you want to delete this lead?')) {
-                try {
-                    await db.collection('leads').doc(leadId).delete();
-                    showToast('Lead deleted successfully!', 'success');
-                    await loadLeads();
-                } catch (error) {
-                    console.error('Error deleting lead:', error);
-                    showToast('Error deleting lead', 'error');
-                }
+                leads = leads.filter(l => l.id !== leadId);
+                showToast('Lead deleted successfully!', 'success');
+                loadLeads();
             }
         }
 
@@ -2303,60 +1901,70 @@
         }
 
         // Toggle automation
-        async function toggleAutomation(automationId) {
-            try {
-                const automationDoc = await db.collection('automations').doc(automationId).get();
-                const automation = automationDoc.data();
-                const newStatus = automation.status === 'active' ? 'paused' : 'active';
-                
-                await db.collection('automations').doc(automationId).update({
-                    status: newStatus
-                });
-                
-                showToast(`Automation ${newStatus}!`, 'success');
-                await loadAutomations();
-            } catch (error) {
-                console.error('Error toggling automation:', error);
-                showToast('Error updating automation', 'error');
-            }
+        function toggleAutomation(automationId) {
+            showToast('Automation toggled!', 'success');
+        }
+
+        // Create automation templates
+        function createWelcomeAutomation() {
+            document.getElementById('automation-name').value = 'Welcome Series';
+            document.getElementById('automation-platform').value = 'all';
+            document.getElementById('automation-trigger').value = 'new_lead';
+            document.getElementById('automation-message').value = 'Hi {{name}}! 👋 Welcome to our community! We\'re excited to have you on board. Is there anything specific you\'d like to know about our services?';
+            document.getElementById('automation-ai-enabled').checked = true;
+            showModal('automation-modal');
+        }
+
+        function createFollowupAutomation() {
+            document.getElementById('automation-name').value = 'Follow-up Sequence';
+            document.getElementById('automation-platform').value = 'whatsapp';
+            document.getElementById('automation-trigger').value = 'no_reply';
+            document.getElementById('automation-message').value = 'Hi {{name}}, I wanted to follow up on my previous message. Are you still interested in learning more about our services? Let me know if you have any questions!';
+            showModal('automation-modal');
+        }
+
+        function createBirthdayAutomation() {
+            document.getElementById('automation-name').value = 'Birthday Wishes';
+            document.getElementById('automation-platform').value = 'all';
+            document.getElementById('automation-trigger').value = 'birthday';
+            document.getElementById('automation-message').value = '🎉 Happy Birthday {{name}}! 🎂 Wishing you a fantastic day filled with joy and celebration! As a birthday gift, here\'s a special offer just for you...';
+            showModal('automation-modal');
         }
 
         // Toast notification system
         function showToast(message, type = 'info') {
             const toast = document.createElement('div');
-            toast.className = `toast professional-card border-l-4 p-3 sm:p-4 rounded-lg shadow-lg max-w-sm ${
-                type === 'success' ? 'border-green-500' :
+            toast.className = `toast professional-card border-l-4 p-3 sm:p-4 rounded-lg shadow-lg max-w-sm ${type === 'success' ? 'border-green-500' :
                 type === 'error' ? 'border-red-500' :
-                type === 'warning' ? 'border-yellow-500' :
-                'border-blue-500'
-            }`;
-            
+                    type === 'warning' ? 'border-yellow-500' :
+                        'border-blue-500'
+                }`;
+
             toast.innerHTML = `
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <i class="fas ${
-                            type === 'success' ? 'fa-check-circle text-green-500' :
-                            type === 'error' ? 'fa-exclamation-circle text-red-500' :
-                            type === 'warning' ? 'fa-exclamation-triangle text-yellow-500' :
+                        <i class="fas ${type === 'success' ? 'fa-check-circle text-green-500' :
+                    type === 'error' ? 'fa-exclamation-circle text-red-500' :
+                        type === 'warning' ? 'fa-exclamation-triangle text-yellow-500' :
                             'fa-info-circle text-blue-500'
-                        } text-sm sm:text-base"></i>
+                } text-sm sm:text-base"></i>
                     </div>
                     <div class="ml-3">
-                        <p class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">${message}</p>
+                        <p class="text-xs sm:text-sm font-medium text-gray-900">${message}</p>
                     </div>
                     <div class="ml-auto pl-3">
-                        <button onclick="this.parentElement.parentElement.parentElement.remove()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" class="text-gray-400 hover:text-gray-600">
                             <i class="fas fa-times text-xs"></i>
                         </button>
                     </div>
                 </div>
             `;
-            
+
             document.getElementById('toast-container').appendChild(toast);
-            
+
             // Show toast
             setTimeout(() => toast.classList.add('show'), 100);
-            
+
             // Auto remove after 5 seconds
             setTimeout(() => {
                 toast.classList.remove('show');
@@ -2364,111 +1972,79 @@
             }, 5000);
         }
 
-        // Initialize charts (placeholder)
-        function initializeCharts() {
-            // Message performance chart
-            const messageCtx = document.getElementById('messageChart');
-            if (messageCtx) {
-                new Chart(messageCtx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                        datasets: [{
-                            label: 'Messages Sent',
-                            data: [12, 19, 3, 5, 2, 3],
-                            borderColor: 'rgb(59, 130, 246)',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                display: false
-                            }
-                        }
-                    }
-                });
-            }
-
-            // Platform distribution chart
-            const platformCtx = document.getElementById('platformChart');
-            if (platformCtx) {
-                new Chart(platformCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['WhatsApp', 'Instagram', 'Email'],
-                        datasets: [{
-                            data: [45, 35, 20],
-                            backgroundColor: [
-                                '#10B981',
-                                '#EC4899',
-                                '#3B82F6'
-                            ]
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }
-                });
-            }
-        }
-
         // Initialize charts when analytics page is shown
         document.querySelector('[data-page="analytics"]').addEventListener('click', () => {
-            setTimeout(initializeCharts, 100);
+            setTimeout(() => {
+                // Message performance chart
+                const messageCtx = document.getElementById('messageChart');
+                if (messageCtx && !messageCtx._chart) {
+                    messageCtx._chart = new Chart(messageCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                            datasets: [{
+                                label: 'Messages Sent',
+                                data: [12, 19, 3, 5, 2, 3],
+                                borderColor: 'rgb(59, 130, 246)',
+                                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                tension: 0.4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Platform distribution chart
+                const platformCtx = document.getElementById('platformChart');
+                if (platformCtx && !platformCtx._chart) {
+                    platformCtx._chart = new Chart(platformCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['WhatsApp', 'Instagram', 'Email'],
+                            datasets: [{
+                                data: [45, 35, 20],
+                                backgroundColor: [
+                                    '#10B981',
+                                    '#EC4899',
+                                    '#3B82F6'
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }
+                    });
+                }
+            }, 100);
         });
 
         // Load profile data when settings page is shown
-        document.querySelector('[data-page="settings"]').addEventListener('click', async () => {
-            try {
-                const userDoc = await db.collection('users').doc(currentUser.uid).get();
-                if (userDoc.exists) {
-                    const userData = userDoc.data();
-                    document.getElementById('profile-name').value = userData.displayName || '';
-                    document.getElementById('profile-email').value = userData.email || '';
-                    document.getElementById('profile-phone').value = userData.phone || '';
-                    document.getElementById('profile-timezone').value = userData.timezone || 'UTC';
-                    
-                    // Load API keys
-                    if (userData.apiKeys) {
-                        document.getElementById('openai-key').value = userData.apiKeys.OPENAI_API_KEY || '';
-                        document.getElementById('whatsapp-token').value = userData.apiKeys.WHATSAPP_TOKEN || '';
-                        document.getElementById('instagram-token').value = userData.apiKeys.INSTAGRAM_TOKEN || '';
-                        if (userData.apiKeys.SMTP_CONFIG) {
-                            document.getElementById('smtp-host').value = userData.apiKeys.SMTP_CONFIG.host || '';
-                            document.getElementById('smtp-port').value = userData.apiKeys.SMTP_CONFIG.port || '';
-                            document.getElementById('smtp-user').value = userData.apiKeys.SMTP_CONFIG.user || '';
-                            document.getElementById('smtp-pass').value = userData.apiKeys.SMTP_CONFIG.pass || '';
-                        }
-                    }
-                }
-            } catch (error) {
-                console.error('Error loading profile data:', error);
-            }
+        document.querySelector('[data-page="settings"]').addEventListener('click', () => {
+            document.getElementById('profile-name').value = currentUser.displayName || '';
+            document.getElementById('profile-email').value = currentUser.email || '';
+            document.getElementById('profile-phone').value = currentUser.phone || '';
+            document.getElementById('profile-timezone').value = currentUser.timezone || 'UTC';
         });
 
         // Generate referral link when affiliates page is shown
         document.querySelector('[data-page="affiliates"]').addEventListener('click', () => {
             generateReferralLink();
         });
-
-        // Initialize the app
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set initial theme
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            }
-        });
     </script>
 </body>
+
 </html>
